@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Project Template 2025"
 include(":app")
+include(":feature-example")

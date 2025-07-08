@@ -1,0 +1,69 @@
+{
+  "templateName": "Android Project Template 2025",
+  "templateVersion": "1.0.0",
+  "description": "Comprehensive Android project template with Clean Architecture, MVVM, Jetpack Compose, and Amazon Q integration",
+  "author": "Method Signature",
+  "minAndroidStudioVersion": "2023.1.1",
+  "targetSdk": 34,
+  "minSdk": 24,
+  "replacements": {
+    "packageName": {
+      "placeholder": "com.methodsignature.projecttemplate2025",
+      "description": "Main package name for the application"
+    },
+    "applicationId": {
+      "placeholder": "com.methodsignature.projecttemplate2025",
+      "description": "Unique application identifier"
+    },
+    "appName": {
+      "placeholder": "Project Template 2025",
+      "description": "Display name of the application"
+    },
+    "projectName": {
+      "placeholder": "ProjectTemplate2025",
+      "description": "Project name used in file names and classes"
+    }
+  },
+  "features": [
+    "Clean Architecture",
+    "MVVM Pattern",
+    "Repository Pattern",
+    "Jetpack Compose",
+    "Dependency Injection (Hilt)",
+    "Amazon Q Integration",
+    "Comprehensive Documentation",
+    "Module-based Structure",
+    "Version Catalog",
+    "Testing Setup"
+  ],
+  "modules": {
+    "core": [
+      "app",
+      "core-ui",
+      "core-data", 
+      "core-domain"
+    ],
+    "features": [
+      "feature-auth",
+      "feature-dashboard"
+    ],
+    "shared": [
+      "shared-resources",
+      "shared-utils"
+    ]
+  },
+  "documentation": {
+    "architecture": "docs/architecture/README.md",
+    "patterns": "docs/patterns/README.md",
+    "gradle": "docs/gradle/README.md",
+    "amazonQ": "docs/amazon-q-integration.md"
+  },
+  "amazonQIntegration": {
+    "rulesDirectory": ".amazonq/rules/",
+    "contextFiles": [
+      "docs/architecture/README.md",
+      "docs/patterns/README.md",
+      "docs/gradle/README.md"
+    ]
+  }
+}
