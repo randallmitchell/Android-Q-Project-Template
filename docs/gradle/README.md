@@ -2,7 +2,7 @@
 
 ## Module Structure Guidelines
 
-### Core Modules
+### Library Modules
 
 #### 1. app module
 - Main application module
@@ -20,9 +20,9 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":core-ui"))
-    implementation(project(":core-data"))
-    implementation(project(":core-domain"))
+    implementation(project(":library-ui"))
+    implementation(project(":library-data"))
+    implementation(project(":library-domain"))
     implementation(project(":feature-auth"))
     implementation(project(":feature-dashboard"))
     
@@ -31,13 +31,13 @@ dependencies {
 }
 ```
 
-#### 2. core-ui module
+#### 2. library-ui module
 - Shared UI components and themes
 - Compose utilities and common screens
 - Design system implementation
 
 ```kotlin
-// core-ui/build.gradle.kts
+// library-ui/build.gradle.kts
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -53,13 +53,12 @@ dependencies {
 }
 ```
 
-#### 3. core-data module
-- Repository implementations
-- Data sources (remote/local)
+#### 3. library-data module
+- Service implementations
 - Database and network setup
 
 ```kotlin
-// core-data/build.gradle.kts
+// library-data/build.gradle.kts
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -68,7 +67,7 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":core-domain"))
+    implementation(project(":library-domain"))
     
     implementation(libs.retrofit)
     implementation(libs.room.runtime)
@@ -80,13 +79,13 @@ dependencies {
 }
 ```
 
-#### 4. core-domain module
+#### 4. library-domain module
 - Pure Kotlin module (no Android dependencies)
-- Domain models and repository interfaces
+- Domain models and service interfaces
 - Use cases and business logic
 
 ```kotlin
-// core-domain/build.gradle.kts
+// library-domain/build.gradle.kts
 plugins {
     id("java-library")
     alias(libs.plugins.jetbrainsKotlinJvm)
@@ -113,8 +112,8 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":core-ui"))
-    implementation(project(":core-domain"))
+    implementation(project(":library-ui"))
+    implementation(project(":library-domain"))
     
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.hilt.android)
@@ -145,17 +144,17 @@ feature-[name]/
 ```
 app
 ├── feature-* modules
-│   ├── core-ui
-│   └── core-domain
-├── core-data
-│   └── core-domain
-└── core-ui
+│   ├── library-ui
+│   └── library-domain
+├── library-data
+│   └── library-domain
+└── library-ui
 ```
 
 ### Prohibited Dependencies
-- Core modules cannot depend on feature modules
+- Library modules cannot depend on feature modules
 - Feature modules cannot depend on other feature modules
-- core-domain cannot depend on Android framework
+- library-domain cannot depend on Android framework
 
 ## Version Catalog Integration
 

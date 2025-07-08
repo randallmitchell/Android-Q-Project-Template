@@ -29,39 +29,49 @@ class FeatureViewModel @Inject constructor(
 ```
 
 ### 2. Domain Layer
-- **Use Cases**: Business logic implementation
-- **Repository Interfaces**: Data access contracts
+- **Use Cases**: Business logic and orchestration
+- **Service Interfaces**: Data access contracts
 - **Domain Models**: Core business entities
 
 ```kotlin
 class GetFeatureDataUseCase @Inject constructor(
-    private val repository: FeatureRepository
+    private val remoteService: FeatureRemoteService,
+    private val localService: FeatureLocalService
 ) {
     suspend operator fun invoke(): Result<FeatureData> {
-        return repository.getFeatureData()
+        return try {
+            val localData = localService.getData()
+            if (localData.isNotEmpty()) {
+                Result.success(localData)
+            } else {
+                val remoteData = remoteService.fetchData()
+                localService.saveData(remoteData)
+                Result.success(remoteData)
+            }
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
     }
 }
 ```
 
 ### 3. Data Layer
-- **Repository Implementations**: Data access logic
-- **Data Sources**: Remote and local data sources
-- **DTOs**: Data transfer objects
+- **Service Implementations**: Handle data access and return domain models
 
 ```kotlin
 @Singleton
-class FeatureRepositoryImpl @Inject constructor(
-    private val remoteDataSource: FeatureRemoteDataSource,
-    private val localDataSource: FeatureLocalDataSource
-) : FeatureRepository {
+class FeatureRemoteServiceImpl @Inject constructor(
+    private val api: FeatureApi
+) : FeatureRemoteService {
     
-    override suspend fun getFeatureData(): Result<FeatureData> {
-        return try {
-            val remoteData = remoteDataSource.fetchData()
-            localDataSource.saveData(remoteData)
-            Result.success(remoteData.toDomain())
-        } catch (e: Exception) {
-            Result.failure(e)
+    override suspend fun fetchData(): List<FeatureData> {
+        val response = api.getFeatures()
+        return response.items.map { dto ->
+            FeatureData(
+                id = dto.id,
+                title = dto.name,
+                description = dto.desc
+            )
         }
     }
 }
@@ -71,9 +81,9 @@ class FeatureRepositoryImpl @Inject constructor(
 
 ```
 app/                    # Main application module
-├── core-ui/           # Shared UI components
-├── core-data/         # Data layer implementations
-├── core-domain/       # Domain layer contracts
+├── library-ui/        # Shared UI components
+├── library-data/      # Service implementations
+├── library-domain/    # Use cases and domain models
 ├── feature-auth/      # Authentication feature
 ├── feature-dashboard/ # Dashboard feature
 └── shared-resources/  # Shared resources
@@ -81,5 +91,6 @@ app/                    # Main application module
 
 ## Dependency Flow
 - Presentation → Domain ← Data
-- Features depend on Core modules
+- Use Cases orchestrate Services
+- Services handle their own data access internally
 - No circular dependencies between layers

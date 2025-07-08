@@ -6,6 +6,7 @@ A comprehensive Android project template featuring Clean Architecture, MVVM patt
 
 - **Clean Architecture** with clear separation of concerns
 - **MVVM Pattern** with StateFlow for reactive UI
+- **Service Pattern** for data layer separation
 - **Jetpack Compose** for modern declarative UI
 - **Dependency Injection** with Hilt
 - **Amazon Q Integration** with contextual development rules
@@ -32,14 +33,14 @@ ProjectTemplate2025/
 
 ### Clean Architecture Layers
 1. **Presentation Layer**: ViewModels, Compose UI, Navigation
-2. **Domain Layer**: Use Cases, Repository Interfaces, Domain Models  
-3. **Data Layer**: Repository Implementations, Data Sources, DTOs
+2. **Domain Layer**: Use Cases (business logic), Service Interfaces, Domain Models  
+3. **Data Layer**: Service Implementations (handle their own data access)
 
 ### Module Structure
 - **app**: Main application module with navigation
-- **core-ui**: Shared UI components and themes
-- **core-data**: Data layer implementations
-- **core-domain**: Business logic and contracts
+- **library-ui**: Shared UI components and themes
+- **library-data**: Service implementations
+- **library-domain**: Business logic and contracts
 - **feature-***: Individual feature modules
 
 ## 🔧 Quick Start
@@ -70,7 +71,7 @@ The template includes pre-configured Amazon Q rules:
 | Document | Description |
 |----------|-------------|
 | [Architecture Overview](docs/architecture/README.md) | Clean Architecture implementation |
-| [Design Patterns](docs/patterns/README.md) | MVVM, Repository, and other patterns |
+| [Design Patterns](docs/patterns/README.md) | MVVM, Service, and other patterns |
 | [Gradle Modules](docs/gradle/README.md) | Module structure and requirements |
 | [Amazon Q Integration](docs/amazon-q-integration.md) | AI-assisted development setup |
 | [Setup Guide](setup-template.md) | Step-by-step template usage |
@@ -94,13 +95,13 @@ The template includes pre-configured Amazon Q rules:
 Amazon Q automatically loads:
 - Project architecture patterns
 - Established coding conventions
-- Module structure requirements
+- Library and feature module structure requirements
 - Testing strategies
 
 ## 🧪 Testing Strategy
 
 - **Unit Tests**: ViewModels and Use Cases
-- **Integration Tests**: Repository implementations
+- **Integration Tests**: Service implementations
 - **UI Tests**: Critical user flows with Compose Testing
 - **Architecture Tests**: Module dependency validation
 

@@ -27,7 +27,7 @@
   "features": [
     "Clean Architecture",
     "MVVM Pattern",
-    "Repository Pattern",
+    "Service Pattern",
     "Jetpack Compose",
     "Dependency Injection (Hilt)",
     "Amazon Q Integration",
@@ -37,11 +37,11 @@
     "Testing Setup"
   ],
   "modules": {
-    "core": [
+    "library": [
       "app",
-      "core-ui",
-      "core-data", 
-      "core-domain"
+      "library-ui",
+      "library-data", 
+      "library-domain"
     ],
     "features": [
       "feature-auth",

@@ -41,59 +41,104 @@ sealed class ExampleIntent {
 }
 ```
 
-## Repository Pattern
+## Service Pattern
 
-### Repository Interface
+### Service Interface
 ```kotlin
-interface ExampleRepository {
-    suspend fun getData(): Result<List<ExampleData>>
-    suspend fun saveData(data: ExampleData): Result<Unit>
+interface ExampleRemoteService {
+    suspend fun fetchData(): List<ExampleData>
+}
+
+interface ExampleLocalService {
+    suspend fun getData(): List<ExampleData>
+    suspend fun saveData(data: List<ExampleData>)
 }
 ```
 
-### Repository Implementation
+### Service Implementation
 ```kotlin
 @Singleton
-class ExampleRepositoryImpl @Inject constructor(
-    private val remoteDataSource: ExampleRemoteDataSource,
-    private val localDataSource: ExampleLocalDataSource,
-    private val mapper: ExampleDataMapper
-) : ExampleRepository {
+class ExampleRemoteServiceImpl @Inject constructor(
+    private val api: ExampleApi
+) : ExampleRemoteService {
     
-    override suspend fun getData(): Result<List<ExampleData>> {
-        return try {
-            val localData = localDataSource.getData()
-            if (localData.isNotEmpty()) {
-                Result.success(localData.map { mapper.toDomain(it) })
-            } else {
-                val remoteData = remoteDataSource.fetchData()
-                localDataSource.saveData(remoteData)
-                Result.success(remoteData.map { mapper.toDomain(it) })
-            }
-        } catch (e: Exception) {
-            Result.failure(e)
+    override suspend fun fetchData(): List<ExampleData> {
+        val response = api.getExamples()
+        return response.items.map { dto ->
+            ExampleData(
+                id = dto.id,
+                title = dto.name,
+                description = dto.description
+            )
         }
+    }
+}
+
+@Singleton
+class ExampleLocalServiceImpl @Inject constructor(
+    private val database: ExampleDatabase
+) : ExampleLocalService {
+    
+    override suspend fun getData(): List<ExampleData> {
+        val entities = database.exampleDao().getAll()
+        return entities.map { entity ->
+            ExampleData(
+                id = entity.id,
+                title = entity.title,
+                description = entity.description
+            )
+        }
+    }
+    
+    override suspend fun saveData(data: List<ExampleData>) {
+        val entities = data.map { item ->
+            ExampleEntity(
+                id = item.id,
+                title = item.title,
+                description = item.description
+            )
+        }
+        database.exampleDao().insertAll(entities)
     }
 }
 ```
 
 ## Use Case Pattern
 
-### Single Responsibility Use Cases
+### Business Logic Use Cases
 ```kotlin
 class GetExampleDataUseCase @Inject constructor(
-    private val repository: ExampleRepository
+    private val remoteService: ExampleRemoteService,
+    private val localService: ExampleLocalService
 ) {
     suspend operator fun invoke(): Result<List<ExampleData>> {
-        return repository.getData()
+        return try {
+            val localData = localService.getData()
+            if (localData.isNotEmpty()) {
+                Result.success(localData)
+            } else {
+                val remoteData = remoteService.fetchData()
+                localService.saveData(remoteData)
+                Result.success(remoteData)
+            }
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
     }
 }
 
-class SaveExampleDataUseCase @Inject constructor(
-    private val repository: ExampleRepository
+class RefreshExampleDataUseCase @Inject constructor(
+    private val remoteService: ExampleRemoteService,
+    private val localService: ExampleLocalService
 ) {
-    suspend operator fun invoke(data: ExampleData): Result<Unit> {
-        return repository.saveData(data)
+    suspend operator fun invoke(): Result<List<ExampleData>> {
+        return try {
+            val remoteData = remoteService.fetchData()
+            localService.saveData(remoteData)
+            Result.success(remoteData)
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
     }
 }
 ```
@@ -107,9 +152,14 @@ class SaveExampleDataUseCase @Inject constructor(
 abstract class DataModule {
     
     @Binds
-    abstract fun bindExampleRepository(
-        exampleRepositoryImpl: ExampleRepositoryImpl
-    ): ExampleRepository
+    abstract fun bindExampleRemoteService(
+        exampleRemoteServiceImpl: ExampleRemoteServiceImpl
+    ): ExampleRemoteService
+    
+    @Binds
+    abstract fun bindExampleLocalService(
+        exampleLocalServiceImpl: ExampleLocalServiceImpl
+    ): ExampleLocalService
 }
 
 @Module

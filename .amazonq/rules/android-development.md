@@ -10,7 +10,7 @@
 ## Project Structure
 - Follow Clean Architecture principles with clear separation of concerns
 - Use feature-based module organization
-- Implement MVVM pattern with Repository pattern for data layer
+- Implement MVVM pattern with Service pattern for data layer
 - Use Jetpack Compose for UI development
 
 ## Code Standards
@@ -22,18 +22,18 @@
 
 ## Architecture Layers
 1. **Presentation Layer**: ViewModels, Compose UI, Navigation
-2. **Domain Layer**: Use Cases, Repository Interfaces, Domain Models
-3. **Data Layer**: Repository Implementations, Data Sources, DTOs
+2. **Domain Layer**: Use Cases (business logic), Service Interfaces, Domain Models
+3. **Data Layer**: Service Implementations (handle their own data access)
 
 ## Module Requirements
 - Each feature should be a separate Gradle module
-- Core modules: app, core-ui, core-data, core-domain
+- Library modules: app, library-ui, library-data, library-domain
 - Feature modules: feature-[name] (e.g., feature-auth, feature-dashboard)
 - Shared modules: shared-resources, shared-utils
 
 ## Testing Strategy
 - Unit tests for ViewModels and Use Cases
-- Integration tests for Repository implementations
+- Integration tests for Service implementations
 - UI tests for critical user flows using Compose Testing
 
 ## Dependencies Management

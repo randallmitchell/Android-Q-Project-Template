@@ -2,7 +2,7 @@
 
 ## Unit Testing
 - Test ViewModels using MockK for mocking
-- Test Use Cases with fake repositories
+- Test Use Cases with fake services
 - Use Turbine for testing StateFlow/Flow
 - Aim for 80%+ code coverage on business logic
 
@@ -13,7 +13,7 @@
 - Create robot pattern for complex UI tests
 
 ## Integration Testing
-- Test Repository implementations with real data sources
+- Test Service implementations with real dependencies
 - Use TestRoom for database testing
 - Mock network responses with MockWebServer
 - Test dependency injection modules
