@@ -56,9 +56,11 @@ cd YourProjectName
 ```
 
 ### 2. Update Configuration
-- Replace package names: `com.methodsignature.projecttemplate2025` → `com.yourcompany.yourapp`
-- Update app name in `strings.xml`
-- Modify `rootProject.name` in `settings.gradle.kts`
+*Note: The setup script automatically handles these updates for you:*
+- ✅ Replace package names: `com.methodsignature.projecttemplate2025` → `com.yourcompany.yourapp`
+- ✅ Update app name in `strings.xml`
+- ✅ Modify `rootProject.name` in `settings.gradle.kts`
+- ✅ Update class name references
 
 ### 3. Amazon Q Integration
 The template includes pre-configured Amazon Q rules:
