@@ -25,6 +25,37 @@ sed -i "s/Project Template 2025/$PROJECT_NAME/g" settings.gradle.kts
 echo "🏗️ Updating class names..."
 find . -name "*.kt" -type f -exec sed -i "s/ProjectTemplate2025/$PROJECT_NAME/g" {} +
 
+echo "📁 Renaming package directories..."
+# Convert package name to directory path
+PACKAGE_PATH=$(echo $PACKAGE_NAME | tr '.' '/')
+OLD_PACKAGE_PATH="com/methodsignature/projecttemplate2025"
+
+# Rename directories in app module
+if [ -d "app/src/main/java/$OLD_PACKAGE_PATH" ]; then
+    mkdir -p "app/src/main/java/$PACKAGE_PATH"
+    mv app/src/main/java/$OLD_PACKAGE_PATH/* "app/src/main/java/$PACKAGE_PATH/"
+    rm -rf app/src/main/java/com/methodsignature
+fi
+
+if [ -d "app/src/test/java/$OLD_PACKAGE_PATH" ]; then
+    mkdir -p "app/src/test/java/$PACKAGE_PATH"
+    mv app/src/test/java/$OLD_PACKAGE_PATH/* "app/src/test/java/$PACKAGE_PATH/"
+    rm -rf app/src/test/java/com/methodsignature
+fi
+
+if [ -d "app/src/androidTest/java/$OLD_PACKAGE_PATH" ]; then
+    mkdir -p "app/src/androidTest/java/$PACKAGE_PATH"
+    mv app/src/androidTest/java/$OLD_PACKAGE_PATH/* "app/src/androidTest/java/$PACKAGE_PATH/"
+    rm -rf app/src/androidTest/java/com/methodsignature
+fi
+
+# Rename directories in feature-example module
+if [ -d "feature-example/src/main/java/$OLD_PACKAGE_PATH" ]; then
+    mkdir -p "feature-example/src/main/java/$PACKAGE_PATH"
+    mv feature-example/src/main/java/$OLD_PACKAGE_PATH/* "feature-example/src/main/java/$PACKAGE_PATH/"
+    rm -rf feature-example/src/main/java/com/methodsignature
+fi
+
 echo ""
 echo "✅ Template setup complete!"
 echo ""

@@ -61,6 +61,7 @@ cd YourProjectName
 - ✅ Update app name in `strings.xml`
 - ✅ Modify `rootProject.name` in `settings.gradle.kts`
 - ✅ Update class name references
+- ✅ Rename package directories to match new package structure
 
 ### 3. Amazon Q Integration
 The template includes pre-configured Amazon Q rules:
