@@ -13,6 +13,9 @@ echo "Enter your project name (no spaces):"
 read PROJECT_NAME
 
 echo ""
+echo "🔧 Converting line endings to Linux format..."
+find . -type f \( -name "*.kt" -o -name "*.kts" -o -name "*.xml" -o -name "*.gradle" -o -name "*.properties" -o -name "*.md" -o -name "*.txt" -o -name "*.json" \) -exec dos2unix {} \; 2>/dev/null || true
+
 echo "🔄 Updating package names..."
 find . -name "*.kt" -type f -exec sed -i "s/com.methodsignature.projecttemplate2025/$PACKAGE_NAME/g" {} +
 find . -name "*.kts" -type f -exec sed -i "s/com.methodsignature.projecttemplate2025/$PACKAGE_NAME/g" {} +
