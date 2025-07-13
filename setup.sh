@@ -21,6 +21,7 @@ find . -name "*.xml" -type f -exec sed -i "s/com.methodsignature.projecttemplate
 echo "📱 Updating app name..."
 sed -i "s/Project Template 2025/$APP_NAME/g" app/src/main/res/values/strings.xml
 sed -i "s/Project Template 2025/$PROJECT_NAME/g" settings.gradle.kts
+echo "$APP_NAME" > .idea/.name
 
 echo "🏗️ Updating class names..."
 find . -name "*.kt" -type f -exec sed -i "s/ProjectTemplate2025/$PROJECT_NAME/g" {} +
