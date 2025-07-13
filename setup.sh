@@ -36,35 +36,51 @@ OLD_PACKAGE_PATH="com/methodsignature/projecttemplate2025"
 
 # Rename directories in app module
 if [ -d "app/src/main/java/$OLD_PACKAGE_PATH" ]; then
+    echo "📂 Files in app/src/main/java/$OLD_PACKAGE_PATH before move:"
+    ls -la "app/src/main/java/$OLD_PACKAGE_PATH/"
     echo "Creating directory: app/src/main/java/$PACKAGE_PATH"
     mkdir -p "app/src/main/java/$PACKAGE_PATH" || { echo "❌ Failed to create directory: app/src/main/java/$PACKAGE_PATH"; exit 1; }
     echo "Moving files from app/src/main/java/$OLD_PACKAGE_PATH to app/src/main/java/$PACKAGE_PATH"
     mv app/src/main/java/$OLD_PACKAGE_PATH/* "app/src/main/java/$PACKAGE_PATH/" || { echo "❌ Failed to move files from app/src/main/java/$OLD_PACKAGE_PATH"; exit 1; }
+    echo "✅ Files in app/src/main/java/$PACKAGE_PATH after move:"
+    ls -la "app/src/main/java/$PACKAGE_PATH/"
     rm -rf app/src/main/java/com/methodsignature
 fi
 
 if [ -d "app/src/test/java/$OLD_PACKAGE_PATH" ]; then
+    echo "📂 Files in app/src/test/java/$OLD_PACKAGE_PATH before move:"
+    ls -la "app/src/test/java/$OLD_PACKAGE_PATH/"
     echo "Creating directory: app/src/test/java/$PACKAGE_PATH"
     mkdir -p "app/src/test/java/$PACKAGE_PATH" || { echo "❌ Failed to create directory: app/src/test/java/$PACKAGE_PATH"; exit 1; }
     echo "Moving files from app/src/test/java/$OLD_PACKAGE_PATH to app/src/test/java/$PACKAGE_PATH"
     mv app/src/test/java/$OLD_PACKAGE_PATH/* "app/src/test/java/$PACKAGE_PATH/" || { echo "❌ Failed to move files from app/src/test/java/$OLD_PACKAGE_PATH"; exit 1; }
+    echo "✅ Files in app/src/test/java/$PACKAGE_PATH after move:"
+    ls -la "app/src/test/java/$PACKAGE_PATH/"
     rm -rf app/src/test/java/com/methodsignature
 fi
 
 if [ -d "app/src/androidTest/java/$OLD_PACKAGE_PATH" ]; then
+    echo "📂 Files in app/src/androidTest/java/$OLD_PACKAGE_PATH before move:"
+    ls -la "app/src/androidTest/java/$OLD_PACKAGE_PATH/"
     echo "Creating directory: app/src/androidTest/java/$PACKAGE_PATH"
     mkdir -p "app/src/androidTest/java/$PACKAGE_PATH" || { echo "❌ Failed to create directory: app/src/androidTest/java/$PACKAGE_PATH"; exit 1; }
     echo "Moving files from app/src/androidTest/java/$OLD_PACKAGE_PATH to app/src/androidTest/java/$PACKAGE_PATH"
     mv app/src/androidTest/java/$OLD_PACKAGE_PATH/* "app/src/androidTest/java/$PACKAGE_PATH/" || { echo "❌ Failed to move files from app/src/androidTest/java/$OLD_PACKAGE_PATH"; exit 1; }
+    echo "✅ Files in app/src/androidTest/java/$PACKAGE_PATH after move:"
+    ls -la "app/src/androidTest/java/$PACKAGE_PATH/"
     rm -rf app/src/androidTest/java/com/methodsignature
 fi
 
 # Rename directories in feature-example module
 if [ -d "feature-example/src/main/java/$OLD_PACKAGE_PATH" ]; then
+    echo "📂 Files in feature-example/src/main/java/$OLD_PACKAGE_PATH before move:"
+    ls -la "feature-example/src/main/java/$OLD_PACKAGE_PATH/"
     echo "Creating directory: feature-example/src/main/java/$PACKAGE_PATH"
     mkdir -p "feature-example/src/main/java/$PACKAGE_PATH" || { echo "❌ Failed to create directory: feature-example/src/main/java/$PACKAGE_PATH"; exit 1; }
     echo "Moving files from feature-example/src/main/java/$OLD_PACKAGE_PATH to feature-example/src/main/java/$PACKAGE_PATH"
     mv feature-example/src/main/java/$OLD_PACKAGE_PATH/* "feature-example/src/main/java/$PACKAGE_PATH/" || { echo "❌ Failed to move files from feature-example/src/main/java/$OLD_PACKAGE_PATH"; exit 1; }
+    echo "✅ Files in feature-example/src/main/java/$PACKAGE_PATH after move:"
+    ls -la "feature-example/src/main/java/$PACKAGE_PATH/"
     rm -rf feature-example/src/main/java/com/methodsignature
 fi
 
