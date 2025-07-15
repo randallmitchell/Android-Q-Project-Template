@@ -2,27 +2,27 @@
 
 ## Clean Architecture Implementation
 
-This template follows Clean Architecture principles with three main layers:
+This template follows Clean Architecture principles with three main layers, featuring Material Design components and a todo/checklist domain example:
 
 ### 1. Presentation Layer
 - **ViewModels**: Handle UI state and user interactions
-- **Compose UI**: Declarative UI components
+- **Compose UI**: Declarative UI components with Material Design
+- **Custom Components**: Reusable UI components in library-ui module
 - **Navigation**: Screen navigation logic
 
 ```kotlin
 @HiltViewModel
-class FeatureViewModel @Inject constructor(
-    private val useCase: FeatureUseCase
+class TodoViewModel @Inject constructor(
+    private val getTodosUseCase: GetTodosUseCase
 ) : ViewModel() {
     
-    private val _uiState = MutableStateFlow(FeatureUiState())
-    val uiState: StateFlow<FeatureUiState> = _uiState.asStateFlow()
+    private val _uiState = MutableStateFlow(TodoUiState())
+    val uiState: StateFlow<TodoUiState> = _uiState.asStateFlow()
     
-    fun handleAction(action: FeatureAction) {
-        viewModelScope.launch {
-            when (action) {
-                is FeatureAction.LoadData -> loadData()
-            }
+    fun handleIntent(intent: TodoIntent) {
+        when (intent) {
+            is TodoIntent.LoadTodos -> loadTodos()
+            is TodoIntent.ToggleTodo -> toggleTodo(intent.todoId)
         }
     }
 }

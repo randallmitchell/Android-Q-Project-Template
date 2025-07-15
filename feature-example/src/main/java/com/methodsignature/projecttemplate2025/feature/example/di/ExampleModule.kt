@@ -1,6 +1,6 @@
 package com.methodsignature.projecttemplate2025.feature.example.di
 
-import com.methodsignature.projecttemplate2025.feature.example.domain.usecase.GetExampleDataUseCase
+import com.methodsignature.projecttemplate2025.feature.example.domain.usecase.GetTodosUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -9,11 +9,11 @@ import dagger.hilt.android.scopes.ViewModelScoped
 
 @Module
 @InstallIn(ViewModelComponent::class)
-object ExampleModule {
+object TodoModule {
     
     @Provides
     @ViewModelScoped
-    fun provideGetExampleDataUseCase(): GetExampleDataUseCase {
-        return GetExampleDataUseCase()
+    fun provideGetTodosUseCase(): GetTodosUseCase {
+        return GetTodosUseCase()
     }
 }

@@ -2,7 +2,7 @@ package com.methodsignature.projecttemplate2025.feature.example.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.methodsignature.projecttemplate2025.feature.example.domain.usecase.GetExampleDataUseCase
+import com.methodsignature.projecttemplate2025.feature.example.domain.usecase.GetTodosUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -12,33 +12,33 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ExampleViewModel @Inject constructor(
-    private val getExampleDataUseCase: GetExampleDataUseCase
+class TodoViewModel @Inject constructor(
+    private val getTodosUseCase: GetTodosUseCase
 ) : ViewModel() {
     
-    private val _uiState = MutableStateFlow(ExampleUiState())
-    val uiState: StateFlow<ExampleUiState> = _uiState.asStateFlow()
+    private val _uiState = MutableStateFlow(TodoUiState())
+    val uiState: StateFlow<TodoUiState> = _uiState.asStateFlow()
     
-    fun handleIntent(intent: ExampleIntent) {
+    fun handleIntent(intent: TodoIntent) {
         when (intent) {
-            is ExampleIntent.LoadData -> loadData()
-            is ExampleIntent.SelectItem -> selectItem(intent.item)
-            is ExampleIntent.RefreshData -> refreshData()
+            is TodoIntent.LoadTodos -> loadTodos()
+            is TodoIntent.ToggleTodo -> toggleTodo(intent.todoId)
+            is TodoIntent.SelectTodo -> selectTodo(intent.todo)
         }
     }
     
-    private fun loadData() {
+    private fun loadTodos() {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, error = null) }
             
             try {
-                val result = getExampleDataUseCase()
+                val result = getTodosUseCase()
                 result.fold(
-                    onSuccess = { items ->
+                    onSuccess = { todos ->
                         _uiState.update { 
                             it.copy(
                                 isLoading = false,
-                                items = items,
+                                todos = todos,
                                 error = null
                             )
                         }
@@ -47,7 +47,7 @@ class ExampleViewModel @Inject constructor(
                         _uiState.update { 
                             it.copy(
                                 isLoading = false,
-                                error = error.message ?: "Unknown error occurred"
+                                error = error.message ?: "Failed to load todos"
                             )
                         }
                     }
@@ -63,33 +63,43 @@ class ExampleViewModel @Inject constructor(
         }
     }
     
-    private fun selectItem(item: ExampleItem) {
-        _uiState.update { 
-            it.copy(selectedItem = item)
+    private fun toggleTodo(todoId: String) {
+        _uiState.update { state ->
+            state.copy(
+                todos = state.todos.map { todo ->
+                    if (todo.id == todoId) {
+                        todo.copy(isCompleted = !todo.isCompleted)
+                    } else {
+                        todo
+                    }
+                }
+            )
         }
-        // Handle item selection logic here
     }
     
-    private fun refreshData() {
-        loadData()
+    private fun selectTodo(todo: TodoItem) {
+        _uiState.update { 
+            it.copy(selectedTodo = todo)
+        }
     }
 }
 
-data class ExampleUiState(
+data class TodoUiState(
     val isLoading: Boolean = false,
-    val items: List<ExampleItem> = emptyList(),
-    val selectedItem: ExampleItem? = null,
+    val todos: List<TodoItem> = emptyList(),
+    val selectedTodo: TodoItem? = null,
     val error: String? = null
 )
 
-sealed class ExampleIntent {
-    object LoadData : ExampleIntent()
-    object RefreshData : ExampleIntent()
-    data class SelectItem(val item: ExampleItem) : ExampleIntent()
+sealed class TodoIntent {
+    object LoadTodos : TodoIntent()
+    data class ToggleTodo(val todoId: String) : TodoIntent()
+    data class SelectTodo(val todo: TodoItem) : TodoIntent()
 }
 
-data class ExampleItem(
+data class TodoItem(
     val id: String,
     val title: String,
-    val description: String
+    val description: String,
+    val isCompleted: Boolean = false
 )

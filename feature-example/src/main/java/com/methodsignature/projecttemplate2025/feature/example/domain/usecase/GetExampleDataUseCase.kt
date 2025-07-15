@@ -1,36 +1,45 @@
 package com.methodsignature.projecttemplate2025.feature.example.domain.usecase
 
-import com.methodsignature.projecttemplate2025.feature.example.presentation.ExampleItem
+import com.methodsignature.projecttemplate2025.feature.example.presentation.TodoItem
 import kotlinx.coroutines.delay
 import javax.inject.Inject
 
-class GetExampleDataUseCase @Inject constructor() {
+class GetTodosUseCase @Inject constructor() {
     
-    suspend operator fun invoke(): Result<List<ExampleItem>> {
+    suspend operator fun invoke(): Result<List<TodoItem>> {
         return try {
             // Simulate network delay
-            delay(1000)
+            delay(800)
             
-            // Mock data - replace with actual repository call
-            val mockData = listOf(
-                ExampleItem(
+            // Mock todo data - replace with actual repository call
+            val mockTodos = listOf(
+                TodoItem(
                     id = "1",
-                    title = "Example Item 1",
-                    description = "This is a sample item demonstrating the template architecture"
+                    title = "Review project architecture",
+                    description = "Ensure Clean Architecture principles are properly implemented",
+                    isCompleted = false
                 ),
-                ExampleItem(
+                TodoItem(
                     id = "2", 
-                    title = "Example Item 2",
-                    description = "Another sample item showing MVVM pattern implementation"
+                    title = "Implement Material Design components",
+                    description = "Add custom UI components following Material Design guidelines",
+                    isCompleted = true
                 ),
-                ExampleItem(
+                TodoItem(
                     id = "3",
-                    title = "Example Item 3", 
-                    description = "Third item demonstrating Clean Architecture principles"
+                    title = "Write unit tests", 
+                    description = "Add comprehensive test coverage for ViewModels and Use Cases",
+                    isCompleted = false
+                ),
+                TodoItem(
+                    id = "4",
+                    title = "Setup CI/CD pipeline",
+                    description = "Configure automated testing and deployment",
+                    isCompleted = false
                 )
             )
             
-            Result.success(mockData)
+            Result.success(mockTodos)
         } catch (e: Exception) {
             Result.failure(e)
         }

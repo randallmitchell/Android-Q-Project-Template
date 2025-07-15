@@ -1,13 +1,15 @@
 # Android Project Template 2025
 
-A comprehensive Android project template featuring Clean Architecture, MVVM pattern, Jetpack Compose, and seamless Amazon Q integration for enhanced development productivity.
+A comprehensive Android project template featuring Clean Architecture, MVVM pattern, Jetpack Compose with Material Design 3, and seamless Amazon Q integration. Includes a todo/checklist example demonstrating best practices.
 
 ## 🚀 Features
 
 - **Clean Architecture** with clear separation of concerns
 - **MVVM Pattern** with StateFlow for reactive UI
 - **Service Pattern** for data layer separation
-- **Jetpack Compose** for modern declarative UI
+- **Jetpack Compose** with Material Design 3
+- **Custom UI Components** in dedicated library module
+- **Todo/Checklist Example** demonstrating real-world patterns
 - **Dependency Injection** with Hilt
 - **Amazon Q Integration** with contextual development rules
 - **Comprehensive Documentation** with code examples
@@ -38,10 +40,10 @@ ProjectTemplate2025/
 
 ### Module Structure
 - **app**: Main application module with navigation
-- **library-ui**: Shared UI components and themes
+- **library-ui**: Shared UI components with Material Design
 - **library-data**: Service implementations
 - **library-domain**: Business logic and contracts
-- **feature-***: Individual feature modules
+- **feature-example**: Todo/checklist feature demonstrating patterns
 
 ## 🔧 Quick Start
 
@@ -75,6 +77,8 @@ The template includes pre-configured Amazon Q rules:
 |----------|-------------|
 | [Architecture Overview](docs/architecture/README.md) | Clean Architecture implementation |
 | [Design Patterns](docs/patterns/README.md) | MVVM, Service, and other patterns |
+| [Material Design Guidelines](docs/material-design.md) | Material Design 3 implementation |
+| [UI Components](docs/ui-components.md) | Custom component documentation |
 | [Gradle Modules](docs/gradle/README.md) | Module structure and requirements |
 | [Amazon Q Integration](docs/amazon-q-integration.md) | AI-assisted development setup |
 | [Setup Guide](setup-template.md) | Step-by-step template usage |
@@ -91,7 +95,8 @@ The template includes pre-configured Amazon Q rules:
 ```
 @workspace Create a new feature module for user authentication
 @docs/patterns Implement data loading with proper error handling
-@feature-example Add unit tests for the ViewModel
+@feature-example Add unit tests for the TodoViewModel
+@library-ui Create a new Material Design component
 ```
 
 ### Context Loading

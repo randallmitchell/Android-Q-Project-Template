@@ -5,6 +5,8 @@ package com.methodsignature.projecttemplate2025.feature.example.presentation
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -12,28 +14,24 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.methodsignature.projecttemplate2025.library.ui.TodoCard
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ExampleScreen(
+fun TodoScreen(
     onNavigateBack: () -> Unit,
-    viewModel: ExampleViewModel = hiltViewModel()
+    viewModel: TodoViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     
     LaunchedEffect(Unit) {
-        viewModel.handleIntent(ExampleIntent.LoadData)
+        viewModel.handleIntent(TodoIntent.LoadTodos)
     }
     
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Example Feature") },
-                navigationIcon = {
-                    IconButton(onClick = onNavigateBack) {
-                        Text("←")
-                    }
-                }
+                title = { Text("Todo List") }
             )
         }
     ) { paddingValues ->
@@ -56,11 +54,12 @@ fun ExampleScreen(
                     ) {
                         Text(
                             text = "Error: ${uiState.error}",
+                            style = MaterialTheme.typography.bodyLarge,
                             color = MaterialTheme.colorScheme.error
                         )
                         Spacer(modifier = Modifier.height(16.dp))
                         Button(
-                            onClick = { viewModel.handleIntent(ExampleIntent.LoadData) }
+                            onClick = { viewModel.handleIntent(TodoIntent.LoadTodos) }
                         ) {
                             Text("Retry")
                         }
@@ -71,44 +70,24 @@ fun ExampleScreen(
                     LazyColumn(
                         modifier = Modifier.fillMaxSize(),
                         contentPadding = PaddingValues(16.dp),
-                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                        verticalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
-                        items(uiState.items) { item ->
-                            ExampleItemCard(
-                                item = item,
-                                onItemClick = { 
-                                    viewModel.handleIntent(ExampleIntent.SelectItem(item))
+                        items(uiState.todos) { todo ->
+                            TodoCard(
+                                title = todo.title,
+                                description = todo.description,
+                                isCompleted = todo.isCompleted,
+                                onToggleComplete = {
+                                    viewModel.handleIntent(TodoIntent.ToggleTodo(todo.id))
+                                },
+                                onClick = {
+                                    viewModel.handleIntent(TodoIntent.SelectTodo(todo))
                                 }
                             )
                         }
                     }
                 }
             }
-        }
-    }
-}
-
-@Composable
-private fun ExampleItemCard(
-    item: ExampleItem,
-    onItemClick: () -> Unit
-) {
-    Card(
-        onClick = onItemClick,
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        Column(
-            modifier = Modifier.padding(16.dp)
-        ) {
-            Text(
-                text = item.title,
-                style = MaterialTheme.typography.titleMedium
-            )
-            Text(
-                text = item.description,
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
         }
     }
 }
