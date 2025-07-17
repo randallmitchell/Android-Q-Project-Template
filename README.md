@@ -81,6 +81,7 @@ The template includes pre-configured Amazon Q rules:
 | [UI Components](docs/ui-components.md) | Custom component documentation |
 | [Gradle Modules](docs/gradle/README.md) | Module structure and requirements |
 | [Amazon Q Integration](docs/amazon-q-integration.md) | AI-assisted development setup |
+| [Playbooks Integration](docs/playbooks-integration.md) | Structured development workflows |
 | [Setup Guide](setup-template.md) | Step-by-step template usage |
 
 ## 🤖 Amazon Q Integration

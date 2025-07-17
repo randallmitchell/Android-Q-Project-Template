@@ -134,6 +134,23 @@ Use `@workspace` for comprehensive context:
 - Considers project structure
 - Applies established patterns
 
+### Playbooks Integration
+Use structured playbooks for common development tasks:
+
+```
+@playbooks/create-new-screen.md
+
+[Your completed Playbook Requirements Document (PRD) here]
+```
+
+Playbooks provide:
+- Standardized development workflows
+- Requirements gathering templates
+- Step-by-step execution guidance
+- Validation criteria
+
+See [Playbooks Integration Guide](playbooks-integration.md) for detailed usage.
+
 ## Troubleshooting
 
 ### Amazon Q Not Following Template Patterns
