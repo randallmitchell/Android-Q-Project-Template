@@ -4,18 +4,27 @@ A comprehensive Android project template featuring Clean Architecture, MVVM patt
 
 ## 🚀 Features
 
+### 🤖 Agentic AI Development
+- **Amazon Q Integration** with pre-configured development rules and context
+- **Structured Playbooks** for automated development workflows
+- **Requirements-Driven Development** with Playbook Requirements Documents (PRDs)
+- **AI-Assisted Code Generation** following project architecture patterns
+- **Contextual Documentation** that Amazon Q automatically references
+- **Intelligent Code Review** with architecture compliance checking
+
+### 🏗️ Android Architecture
 - **Clean Architecture** with clear separation of concerns
 - **MVVM Pattern** with StateFlow for reactive UI
 - **Service Pattern** for data layer separation
+- **Module-based Structure** for scalability and AI-assisted development
+- **Dependency Injection** with Hilt
+
+### 🎨 Modern Android Development
 - **Jetpack Compose** with Material Design 3
 - **Custom UI Components** in dedicated library module
 - **Todo/Checklist Example** demonstrating real-world patterns
-- **Dependency Injection** with Hilt
-- **Amazon Q Integration** with contextual development rules
-- **Comprehensive Documentation** with code examples
-- **Module-based Structure** for scalability
 - **Version Catalog** for dependency management
-- **Testing Setup** with best practices
+- **Comprehensive Testing Setup** with best practices
 
 ## 📁 Project Structure
 
@@ -25,9 +34,21 @@ ProjectTemplate2025/
 ├── docs/                     # Comprehensive documentation
 │   ├── architecture/         # Architecture patterns and examples
 │   ├── patterns/            # Design patterns with code samples
-│   └── gradle/              # Module requirements and setup
+│   ├── gradle/              # Module requirements and setup
+│   ├── amazon-q-integration.md
+│   ├── playbooks-integration.md
+│   └── material-design.md
+├── playbooks/               # Development workflow playbooks
+│   ├── templates/           # PRD templates
+│   ├── examples/            # Example PRDs
+│   └── [playbook-name].md   # Individual playbooks
 ├── app/                     # Main application module
 ├── feature-example/         # Example feature module
+├── library-ui/              # Shared UI components
+├── gradle/                  # Gradle wrapper and version catalog
+│   └── libs.versions.toml   # Dependency version catalog
+├── setup.sh                 # Linux/Mac setup script
+├── setup.bat                # Windows setup script
 └── template-config.json     # Template configuration
 ```
 
