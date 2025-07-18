@@ -1,14 +1,17 @@
 # Playbooks
 
-Playbooks define step-by-step processes for common Android development tasks within this project. Each playbook includes requirements gathering, execution steps, and validation criteria.
+Playbooks provide a structured approach to AI-assisted development in this project. They represent a clear communication protocol that helps optimize both the AI agent's processing efficiency and the developer's time investment.
 
 ## What is a Playbook?
 
 A playbook is a structured guide that:
 - Defines the steps for a specific developer task
-- Specifies requirements needed before execution
-- Provides templates for gathering those requirements
+- Specifies roles and context needed for AI execution
+- Includes requirements gathering through guided questions
 - Can be executed through Amazon Q Chat integration
+- Can be created for one-time tasks or reusable workflows
+
+See [Playbook Philosophy](../docs/playbook-philosophy.md) for detailed benefits and approach.
 
 ## Available Playbooks
 
@@ -18,45 +21,46 @@ A playbook is a structured guide that:
 | [Create New Playbook](create-new-playbook.md) | Create a new structured playbook for development workflows | [Template](templates/playbook-template.md) |
 | [Create New Screen](create-new-screen.md) | Add a new screen to an existing navigation flow | [Template](templates/create-new-screen-prd.md) |
 | [Create New Flow](create-new-flow.md) | Create a new navigation flow in the app | [Template](templates/create-new-flow-prd.md) |
-| [Add Form Input](add-form-input.md) | Add an input field to an existing form | [Template](templates/add-form-input-prd.md) |
-| [Create Screen Section](create-screen-section.md) | Add a new section to an existing screen | [Template](templates/create-screen-section-prd.md) |
-| [Update SDK](update-sdk.md) | Update an SDK dependency | [Template](templates/update-sdk-prd.md) |
 
 ## How to Use Playbooks
 
-### 1. Generate Playbook Requirements Document (PRD)
-1. Choose the appropriate playbook for your task
-2. Use the playbook's template to create a Playbook Requirements Document (PRD)
-3. Fill in all required parameters and specifications
-
-### 2. Execute Playbook
+### Execute a Playbook
 1. Open Amazon Q Chat
-2. Reference the playbook: `@playbooks/[playbook-name].md`
-3. Provide your completed PRD
-4. Amazon Q will execute the playbook steps
+2. Reference the playbook: `@playbooks/[playbook-name].md [brief description of what you want to do]`
+3. Amazon Q will ask guided questions to gather the required information
+4. Once you provide the information, Amazon Q will execute the playbook steps
 
 ### Example Usage
 ```
-@playbooks/create-new-screen.md
-
-Here is my Playbook Requirements Document (PRD):
-[paste your completed PRD here]
+@playbooks/create-new-screen.md I want to add a new settings screen
+@playbooks/setup-new-project.md I want to set up a new project based on this template
 ```
 
 ## Playbook Structure
 
 Each playbook contains:
-- **Overview**: Purpose and scope
+
+### For Developers
+- **When to Use**: Scenarios for using this playbook
+- **How to Run**: Step-by-step instructions for invoking Amazon Q
 - **Prerequisites**: What must exist before running
-- **Requirements**: Parameters needed for execution
-- **Steps**: Detailed implementation process
-- **Validation**: How to verify successful completion
-- **Template Reference**: Link to Playbook Requirements Document (PRD) template
+- **Inputs**: Information needed (gathered through guided questions)
 
-## PRD Template Structure
+### For AI Agent
+- **Role(s)**: Specific roles that define context and responsibilities
+- **Overview**: What the AI should accomplish
+- **Requirements Gathering**: Guided questions to collect information
+- **Execution Steps**: Detailed implementation process
+- **Validation Checklist**: How to verify successful completion
+- **Success Criteria**: Definition of done
 
-Each Playbook Requirements Document (PRD) template includes:
-- **Project Context**: Current state information
-- **Requirements**: Specific parameters for the task
-- **Specifications**: Technical details and constraints
-- **Acceptance Criteria**: Definition of done
+## Roles
+
+Playbooks use roles to optimize AI context loading. Available roles include:
+- **Mobile Developer**: Full-stack feature implementation
+- **UI Designer**: Design system and component work
+- **Bug Fixer**: Debugging and issue resolution
+- **Playbook Creator**: Process automation
+- **Product Manager**: Technical information gathering
+
+See [roles directory](roles/) for detailed role definitions.
