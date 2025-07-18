@@ -47,8 +47,6 @@ ProjectTemplate2025/
 ├── library-ui/              # Shared UI components
 ├── gradle/                  # Gradle wrapper and version catalog
 │   └── libs.versions.toml   # Dependency version catalog
-├── setup.sh                 # Linux/Mac setup script
-├── setup.bat                # Windows setup script
 └── template-config.json     # Template configuration
 ```
 
@@ -68,23 +66,30 @@ ProjectTemplate2025/
 
 ## 🔧 Quick Start
 
-### 1. Setup New Project
-```bash
+### 1. Setup New Project with Amazon Q
+```
 # Clone template
 git clone <template-repo> YourProjectName
 cd YourProjectName
 
-# Run setup script
-./setup.sh
+# Open in Android Studio with Amazon Q plugin
 ```
 
-### 2. Update Configuration
-*Note: The setup script automatically handles these updates for you:*
+### 2. Use the Setup Playbook
+1. Open Amazon Q Chat in Android Studio
+2. Reference the setup playbook: `@playbooks/setup-new-project.md`
+3. Fill out the Playbook Requirements Document (PRD)
+4. Let Amazon Q handle the project setup for you
+
+The setup playbook will automatically:
 - ✅ Replace package names: `com.methodsignature.projecttemplate2025` → `com.yourcompany.yourapp`
 - ✅ Update app name in `strings.xml`
 - ✅ Modify `rootProject.name` in `settings.gradle.kts`
 - ✅ Update class name references
 - ✅ Rename package directories to match new package structure
+- ✅ Configure Git repository
+- ✅ Customize UI theme
+- ✅ Configure module structure based on requirements
 
 ### 3. Amazon Q Integration
 The template includes pre-configured Amazon Q rules:
@@ -103,7 +108,7 @@ The template includes pre-configured Amazon Q rules:
 | [Gradle Modules](docs/gradle/README.md) | Module structure and requirements |
 | [Amazon Q Integration](docs/amazon-q-integration.md) | AI-assisted development setup |
 | [Playbooks Integration](docs/playbooks-integration.md) | Structured development workflows |
-| [Setup Guide](setup-template.md) | Step-by-step template usage |
+| [Setup Guide](playbooks/setup-new-project.md) | Step-by-step project setup playbook |
 
 ## 🤖 Amazon Q Integration
 
@@ -159,8 +164,7 @@ Amazon Q automatically loads:
 ## 📋 Template Checklist
 
 When using this template:
-- [ ] Update package names and app configuration
-- [ ] Configure Amazon Q integration
+- [ ] Run the setup playbook with Amazon Q
 - [ ] Review and customize architecture documentation
 - [ ] Set up CI/CD pipelines
 - [ ] Configure code quality tools

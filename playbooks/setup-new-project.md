@@ -1,0 +1,97 @@
+# Setup New Project Playbook
+
+## For Developers
+
+### When to Use This Playbook
+Use this playbook immediately after cloning the template repository when you want to create a new project based on this template.
+
+### How to Run This Playbook
+1. Open the project in Android Studio
+2. Open Amazon Q Chat panel (click the Amazon Q icon in the toolbar)
+3. Type: `@playbooks/setup-new-project.md I want to set up a new project based on this template`
+4. Amazon Q will guide you through filling out the Playbook Requirements Document (PRD) template
+5. Once the Playbook Requirements Document is complete, Amazon Q will execute the playbook steps automatically
+
+### Prerequisites
+- Android Studio with Amazon Q plugin installed
+- Git repository for the new project
+- Template cloned or downloaded
+
+### Information You'll Need
+Before starting, have the following information ready for the AI Agent:
+- **New project name** (e.g., "MyAwesomeApp")
+- **Package name** (e.g., "com.yourcompany.yourapp")
+- **Company/Organization name**
+- **App display name** (name shown to users)
+- **Whether to keep or remove** the example feature module
+- **Primary and secondary colors** for UI theme
+- **Git repository URL** and configuration details
+- **Any additional feature modules** you want created initially
+
+---
+
+## For AI Agent
+
+### Overview
+This playbook sets up a new Android project based on the ProjectTemplate2025 template. Handle package renaming, configuration updates, and initial project setup.
+
+### Requirements Gathering
+First, guide the developer through the [Setup New Project PRD Template](templates/setup-new-project-prd.md) to collect:
+- New project name and package name
+- Company name and project description
+- Module requirements and UI customization
+- Git configuration and CI/CD requirements
+
+### Execution Steps
+
+### 1. Project Initialization
+- Clone the template repository
+- Open the project in Android Studio
+- Initialize Git repository (if not already done)
+
+### 2. Package Renaming
+- Update application ID in build.gradle files
+- Rename package directories
+- Update package references in source files
+- Update imports across the project
+
+### 3. Project Configuration
+- Update app name in strings.xml
+- Modify rootProject.name in settings.gradle.kts
+- Update README.md with project-specific information
+- Configure template-config.json
+- Update .idea folder configuration files:
+  - Rename project in .idea/.name
+  - Update module names in .idea/modules.xml
+  - Update module paths in .idea/compiler.xml to reflect new project name
+
+### 4. Clean Build
+- Rebuild project to verify configuration
+- Fix any build errors
+- Run initial tests
+
+### 5. Module Configuration
+- Keep or remove example feature module based on requirements
+- Create initial feature modules as specified in the PRD
+- Set up additional library modules if required
+- Update settings.gradle.kts to include all modules
+
+### 6. Initial Customization
+- Update theme colors based on UI specifications
+- Configure initial navigation
+- Set up custom fonts if specified
+
+### Validation Checklist
+- [ ] Project builds successfully
+- [ ] All package references are updated
+- [ ] App runs on emulator/device
+- [ ] Navigation works correctly
+- [ ] Example feature functions properly or has been removed
+- [ ] All PRD requirements have been implemented
+- [ ] Git repository is properly configured
+
+### Success Criteria
+Confirm with the developer that:
+1. The project builds and runs without errors
+2. All customizations from the PRD are applied
+3. The project structure matches their requirements

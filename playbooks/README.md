@@ -14,6 +14,7 @@ A playbook is a structured guide that:
 
 | Playbook | Description | Template |
 |----------|-------------|----------|
+| [Setup New Project](setup-new-project.md) | Set up a new project based on this template | [Template](templates/setup-new-project-prd.md) |
 | [Create New Screen](create-new-screen.md) | Add a new screen to an existing navigation flow | [Template](templates/create-new-screen-prd.md) |
 | [Create New Flow](create-new-flow.md) | Create a new navigation flow in the app | [Template](templates/create-new-flow-prd.md) |
 | [Add Form Input](add-form-input.md) | Add an input field to an existing form | [Template](templates/add-form-input-prd.md) |
