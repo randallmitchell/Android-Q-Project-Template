@@ -42,6 +42,8 @@ Before starting, have the following information ready for the AI Agent:
 
 **Role Selection Reasoning**: This playbook requires complete project knowledge including build systems, package management, module structure, and configuration files - matching the Mobile Developer role's comprehensive project context.
 
+**Context Loading Strategy**: Automatically loads entire project structure, build configuration, package management, and template files for comprehensive project setup.
+
 ### Overview
 This playbook sets up a new Android project based on the ProjectTemplate2025 template. Handle package renaming, configuration updates, and initial project setup.
 

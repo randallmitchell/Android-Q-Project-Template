@@ -39,6 +39,8 @@ Amazon Q will gather the following information through guided questions:
 
 **Role Selection Reasoning**: This playbook requires extensive Android project knowledge including module creation, Gradle configuration, navigation architecture, and feature integration - matching the Mobile Developer role's full-stack capabilities.
 
+**Context Loading Strategy**: Automatically loads complete project structure, module architecture, Gradle configuration, and navigation patterns for comprehensive flow creation.
+
 ## Overview
 Creates an empty navigation flow structure with feature module scaffolding and basic navigation setup. Creates entry points but leaves screens empty for future development.
 

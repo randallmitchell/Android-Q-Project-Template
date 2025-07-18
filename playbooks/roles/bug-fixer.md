@@ -22,3 +22,9 @@ A developer focused on debugging, issue resolution, and code analysis for proble
 - Testing strategies
 - Android development troubleshooting
 - Performance optimization
+
+## Context Loading Optimization
+- **Primary Context**: Full workspace for comprehensive code analysis
+- **Pattern Reference**: Implementation patterns for solution guidance
+- **Standards Context**: Development and testing standards for quality fixes
+- **Diagnostic Focus**: Targeted context loading based on specific issue type

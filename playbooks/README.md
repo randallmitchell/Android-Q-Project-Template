@@ -24,6 +24,7 @@ See [Playbook Philosophy](../docs/playbook-philosophy.md) for detailed benefits 
 | [Create New Playbook](create-new-playbook.md) | Create a new structured playbook for development workflows | [Template](templates/playbook-template.md) |
 | [Create New Screen](create-new-screen.md) | Add a new screen to an existing navigation flow | N/A |
 | [Create New Flow](create-new-flow.md) | Create a new navigation flow in the app | N/A |
+| [Optimize Playbook Roles](optimize-playbook-roles.md) | Enhance role optimization system for better AI context loading | N/A |
 
 ## How to Use Playbooks
 

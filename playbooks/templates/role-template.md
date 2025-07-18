@@ -19,3 +19,9 @@
 - [Knowledge area 2]
 - [Knowledge area 3]
 - [Additional knowledge areas as needed]
+
+## Context Loading Optimization
+- **Primary Context**: [Main context source for this role's tasks]
+- **Focused Areas**: [Specific documentation or code areas to prioritize]
+- **Optimization Strategy**: [How this role should load context efficiently]
+- **Scope Control**: [What to include/exclude for optimal performance]

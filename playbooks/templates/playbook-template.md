@@ -28,18 +28,23 @@ Before starting, have the following information ready for the AI Agent:
 ### Role(s)
 **REQUIRED**: See [Role Name](roles/role-file.md)
 
-**Primary Role**: [Choose from available roles in playbooks/roles/]
-- [mobile-developer.md] - Full-stack feature implementation
-- [ui-designer.md] - UI components and design system
-- [bug-fixer.md] - Debugging and issue resolution
-- [playbook-creator.md] - Process automation and workflow design
-- [product-manager.md] - Technical information gathering
+**Primary Role**: [Choose the most specific role that matches the task context]
+- [mobile-developer.md] - Full-stack feature implementation (broad context)
+- [ui-designer.md] - UI components and design system (UI-focused)
+- [bug-fixer.md] - Debugging and issue resolution (diagnostic context)
+- [playbook-creator.md] - Process automation and workflow design (meta-process)
+- [product-manager.md] - Technical information gathering (analysis-focused)
 
 **Additional Roles** (if needed):
 - [Secondary role for specific steps, if applicable]
 - [Map each role to specific execution steps]
 
 **Role Selection Reasoning**: [Brief explanation of why this role was chosen and how it matches the playbook's requirements]
+
+**Context Loading Strategy**: Based on the selected role(s), automatically load:
+- Role-specific documentation and code context
+- Relevant project files and patterns
+- Specialized knowledge areas for the task
 
 ### Overview
 [Brief description of what this playbook accomplishes and what the AI should do]

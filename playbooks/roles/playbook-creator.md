@@ -23,3 +23,10 @@ A user creating structured playbooks for development workflows, focusing on proc
 - Playbook structure and best practices
 - Project architecture and standards
 - AI agent instruction design
+
+## Context Loading Optimization
+- **Primary Context**: Complete playbooks directory for pattern consistency
+- **Template Access**: Playbook templates and role definitions
+- **Philosophy Context**: Playbook principles and best practices
+- **Standards Context**: Project rules for workflow integration
+- **Meta-Process Focus**: Specialized context for process automation tasks

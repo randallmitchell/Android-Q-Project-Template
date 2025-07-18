@@ -24,3 +24,10 @@ A product manager gathering technical information for future requirements, under
 - Technical constraint identification
 - Development process awareness
 - Integration and dependency mapping
+
+## Context Loading Optimization
+- **Primary Context**: Architecture and pattern documentation for system understanding
+- **Module Structure**: Gradle configuration and module capabilities
+- **Reference Implementation**: Feature-example for capability assessment
+- **Configuration Context**: Template configuration for feature planning
+- **Analysis Focus**: Targeted context loading for technical assessment tasks

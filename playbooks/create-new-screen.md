@@ -39,6 +39,8 @@ Amazon Q will gather the following information through guided questions:
 
 **Role Selection Reasoning**: This playbook requires comprehensive Android development context including UI creation, state management, navigation setup, and dependency injection - matching the Mobile Developer role's full-stack responsibilities.
 
+**Context Loading Strategy**: Automatically loads full project context, architecture patterns, UI components, and development standards for comprehensive screen creation.
+
 ## Overview
 Creates an empty Compose screen structure and integrates it into an existing navigation flow. Creates placeholder UI and basic navigation setup for future development.
 

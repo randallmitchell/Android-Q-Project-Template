@@ -22,3 +22,9 @@ A designer focused on UI components, visual design, and user interface implement
 - Design system implementation
 - Component architecture
 - Visual design and theming
+
+## Context Loading Optimization
+- **Primary Context**: Library-ui module for focused component work
+- **Design Guidelines**: Material Design and UI component documentation
+- **Development Standards**: UI-specific rules and conventions
+- **Minimal Scope**: Focused context loading for UI-specific tasks only
