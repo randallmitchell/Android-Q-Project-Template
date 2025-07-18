@@ -18,6 +18,7 @@ See [Playbook Philosophy](../docs/playbook-philosophy.md) for detailed benefits 
 | Playbook | Description | Template |
 |----------|-------------|----------|
 | [Welcome Assistant](welcome-assistant.md) | Interactive guide to help navigate playbooks and development tasks | N/A |
+| [Project Overview](project-overview.md) | Comprehensive overview of template features and capabilities | N/A |
 | [Quick Start](quick-start.md) | Quick introduction and orientation to the template project | N/A |
 | [Setup New Project](setup-new-project.md) | Set up a new project based on this template | N/A |
 | [Create New Playbook](create-new-playbook.md) | Create a new structured playbook for development workflows | [Template](templates/playbook-template.md) |

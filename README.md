@@ -4,27 +4,12 @@ A comprehensive Android project template featuring Clean Architecture, MVVM patt
 
 ## 🚀 Features
 
-### 🤖 Agentic AI Development
-- **Amazon Q Integration** with pre-configured development rules and context
-- **Structured Playbooks** for optimized AI-human communication
-- **Role-Based Context Loading** for efficient AI processing
-- **Guided Requirements Gathering** through conversational workflows
-- **AI-Assisted Code Generation** following project architecture patterns
-- **Contextual Documentation** that Amazon Q automatically references
+A comprehensive Android project template featuring Clean Architecture, MVVM pattern, Jetpack Compose with Material Design 3, and seamless Amazon Q integration. Includes agentic AI development workflows, modern Android development stack, and production-ready architecture patterns.
 
-### 🏗️ Android Architecture
-- **Clean Architecture** with clear separation of concerns
-- **MVVM Pattern** with StateFlow for reactive UI
-- **Service Pattern** for data layer separation
-- **Module-based Structure** for scalability and AI-assisted development
-- **Dependency Injection** with Hilt
-
-### 🎨 Modern Android Development
-- **Jetpack Compose** with Material Design 3
-- **Custom UI Components** in dedicated library module
-- **Todo/Checklist Example** demonstrating real-world patterns
-- **Version Catalog** for dependency management
-- **Comprehensive Testing Setup** with best practices
+**Want to learn more?** Get a detailed overview:
+```
+@playbooks/project-overview.md Tell me about this project's features and capabilities
+```
 
 ## 📁 Project Structure
 
@@ -66,6 +51,13 @@ ProjectTemplate2025/
 
 ## 🚀 Getting Started
 
+### Learn About This Template
+**Want to understand what this template offers?** Get a comprehensive overview:
+```
+@playbooks/project-overview.md Tell me about this project's features and capabilities
+```
+This will explain all features, architecture patterns, and AI integration capabilities.
+
 ### Explore the Template
 **New to this template?** Start with the Quick Start playbook:
 ```
@@ -79,6 +71,7 @@ This will guide you through the project structure, run the example, and show you
 @playbooks/setup-new-project.md I want to set up a new project based on this template
 ```
 This will automatically handle package renaming, configuration, and customization for your new project.
+
 
 ## 📚 Documentation
 
