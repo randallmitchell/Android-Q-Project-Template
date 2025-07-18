@@ -6,11 +6,11 @@ A comprehensive Android project template featuring Clean Architecture, MVVM patt
 
 ### 🤖 Agentic AI Development
 - **Amazon Q Integration** with pre-configured development rules and context
-- **Structured Playbooks** for automated development workflows
-- **Requirements-Driven Development** with Playbook Requirements Documents (PRDs)
+- **Structured Playbooks** for optimized AI-human communication
+- **Role-Based Context Loading** for efficient AI processing
+- **Guided Requirements Gathering** through conversational workflows
 - **AI-Assisted Code Generation** following project architecture patterns
 - **Contextual Documentation** that Amazon Q automatically references
-- **Intelligent Code Review** with architecture compliance checking
 
 ### 🏗️ Android Architecture
 - **Clean Architecture** with clear separation of concerns
@@ -39,8 +39,8 @@ ProjectTemplate2025/
 │   ├── playbooks-integration.md
 │   └── material-design.md
 ├── playbooks/               # Development workflow playbooks
-│   ├── templates/           # PRD templates
-│   ├── examples/            # Example PRDs
+│   ├── roles/               # AI agent role definitions
+│   ├── templates/           # Playbook templates
 │   └── [playbook-name].md   # Individual playbooks
 ├── app/                     # Main application module
 ├── feature-example/         # Example feature module
@@ -77,9 +77,9 @@ cd YourProjectName
 
 ### 2. Use the Setup Playbook
 1. Open Amazon Q Chat in Android Studio
-2. Reference the setup playbook: `@playbooks/setup-new-project.md`
-3. Fill out the Playbook Requirements Document (PRD)
-4. Let Amazon Q handle the project setup for you
+2. Type: `@playbooks/setup-new-project.md I want to set up a new project based on this template`
+3. Amazon Q will ask guided questions to gather the required information
+4. Once you provide the information, Amazon Q will execute the setup automatically
 
 The setup playbook will automatically:
 - ✅ Replace package names: `com.methodsignature.projecttemplate2025` → `com.yourcompany.yourapp`
@@ -107,7 +107,7 @@ The template includes pre-configured Amazon Q rules:
 | [UI Components](docs/ui-components.md) | Custom component documentation |
 | [Gradle Modules](docs/gradle/README.md) | Module structure and requirements |
 | [Amazon Q Integration](docs/amazon-q-integration.md) | AI-assisted development setup |
-| [Playbooks Integration](docs/playbooks-integration.md) | Structured development workflows |
+| [Playbook Philosophy](docs/playbook-philosophy.md) | Structured AI-assisted development approach |
 | [Setup Guide](playbooks/setup-new-project.md) | Step-by-step project setup playbook |
 
 ## 🤖 Amazon Q Integration
@@ -118,12 +118,17 @@ The template includes pre-configured Amazon Q rules:
 - Testing requirements
 - Code quality guidelines
 
-### Usage Examples
+### Playbook Examples
+```
+@playbooks/setup-new-project.md I want to set up a new project
+@playbooks/create-new-playbook.md I want to create a playbook for adding tests
+```
+
+### Direct AI Examples
 ```
 @workspace Create a new feature module for user authentication
 @docs/patterns Implement data loading with proper error handling
 @feature-example Add unit tests for the TodoViewModel
-@library-ui Create a new Material Design component
 ```
 
 ### Context Loading
