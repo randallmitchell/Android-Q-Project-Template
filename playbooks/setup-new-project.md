@@ -9,8 +9,8 @@ Use this playbook immediately after cloning the template repository when you wan
 1. Open the project in Android Studio
 2. Open Amazon Q Chat panel (click the Amazon Q icon in the toolbar)
 3. Type: `@playbooks/setup-new-project.md I want to set up a new project based on this template`
-4. Amazon Q will guide you through filling out the Playbook Requirements Document (PRD) template
-5. Once the Playbook Requirements Document is complete, Amazon Q will execute the playbook steps automatically
+4. Amazon Q will ask you for the required information listed below
+5. Once you provide the information, Amazon Q will execute the setup automatically
 
 ### Prerequisites
 - Android Studio with Amazon Q plugin installed
@@ -36,11 +36,14 @@ Before starting, have the following information ready for the AI Agent:
 This playbook sets up a new Android project based on the ProjectTemplate2025 template. Handle package renaming, configuration updates, and initial project setup.
 
 ### Requirements Gathering
-First, guide the developer through the [Setup New Project PRD Template](templates/setup-new-project-prd.md) to collect:
+Ask the developer for the following information:
 - New project name and package name
-- Company name and project description
-- Module requirements and UI customization
-- Git configuration and CI/CD requirements
+- Company/Organization name
+- App display name (name shown to users)
+- Whether to keep or remove the example feature module
+- Primary and secondary colors for UI theme
+- Git repository URL and configuration details
+- Any additional feature modules to create initially
 
 ### Execution Steps
 
@@ -72,7 +75,7 @@ First, guide the developer through the [Setup New Project PRD Template](template
 
 ### 5. Module Configuration
 - Keep or remove example feature module based on requirements
-- Create initial feature modules as specified in the PRD
+- Create initial feature modules as specified by the developer
 - Set up additional library modules if required
 - Update settings.gradle.kts to include all modules
 
@@ -87,11 +90,11 @@ First, guide the developer through the [Setup New Project PRD Template](template
 - [ ] App runs on emulator/device
 - [ ] Navigation works correctly
 - [ ] Example feature functions properly or has been removed
-- [ ] All PRD requirements have been implemented
+- [ ] All developer requirements have been implemented
 - [ ] Git repository is properly configured
 
 ### Success Criteria
 Confirm with the developer that:
 1. The project builds and runs without errors
-2. All customizations from the PRD are applied
+2. All requested customizations are applied
 3. The project structure matches their requirements
