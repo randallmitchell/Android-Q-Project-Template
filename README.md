@@ -118,10 +118,18 @@ The template includes pre-configured Amazon Q rules:
 - Testing requirements
 - Code quality guidelines
 
+### Getting Started with Playbooks
+**New to the project?** Start here:
+```
+@playbooks/welcome-assistant.md Hi, I need help with [describe your task]
+```
+The Welcome Assistant will guide you to the right playbook based on your needs.
+
 ### Playbook Examples
 ```
 @playbooks/setup-new-project.md I want to set up a new project
 @playbooks/create-new-playbook.md I want to create a playbook for adding tests
+@playbooks/welcome-assistant.md I'm not sure which playbook to use
 ```
 
 ### Direct AI Examples
