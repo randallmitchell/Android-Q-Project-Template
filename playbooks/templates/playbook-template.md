@@ -25,6 +25,11 @@ Before starting, have the following information ready for the AI Agent:
 
 ## For AI Agent
 
+### Role(s)
+[Specify the role(s) for this playbook - see playbooks/roles/ for available roles]
+[For multiple roles, specify which role applies to which execution steps]
+[Choose the most specific role that covers the needed context]
+
 ### Overview
 [Brief description of what this playbook accomplishes and what the AI should do]
 

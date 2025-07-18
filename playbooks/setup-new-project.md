@@ -32,6 +32,9 @@ Before starting, have the following information ready for the AI Agent:
 
 ## For AI Agent
 
+### Role
+Mobile Developer - Full-stack project setup and configuration
+
 ### Overview
 This playbook sets up a new Android project based on the ProjectTemplate2025 template. Handle package renaming, configuration updates, and initial project setup.
 

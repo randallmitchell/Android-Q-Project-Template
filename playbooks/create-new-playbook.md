@@ -35,6 +35,20 @@ This playbook creates a new structured playbook file following the established t
 - If a similar playbook exists, suggest using or enhancing it instead
 - Only proceed with new playbook creation if no suitable alternative exists
 
+**Identify the appropriate role(s):**
+Determine which role(s) best fit this playbook. Consider:
+- **Specific over general**: Choose the most focused role that covers the needed context
+- **Multiple roles**: Complex playbooks may need different roles for different phases
+- **Context optimization**: Only load the documentation and code actually needed
+
+Review existing roles in playbooks/roles/:
+- **Mobile Developer**: Full-stack feature implementation (broad context)
+- **UI Designer**: UI components and design system (UI-focused)
+- **Bug Fixer**: Debugging and issue resolution (diagnostic context)
+- **Playbook Creator**: Process automation and workflow design
+- **Product Manager**: Technical information gathering
+- **Custom role**: Create a new role if existing ones don't fit the specific context needs
+
 **Categorize the playbook type:**
 Determine which category this playbook falls into:
 - **Setup/Configuration**: Initial project setup, environment configuration
@@ -94,6 +108,9 @@ Determine which category this playbook falls into:
 - [ ] New playbook file created with correct filename
 - [ ] Developer section is complete and clear
 - [ ] AI Agent section has detailed execution steps
+- [ ] Role(s) have been identified and specified in the AI Agent section
+- [ ] Role selection is optimized for the specific task context
+- [ ] If multiple roles are used, they are clearly mapped to execution phases
 - [ ] Validation checklist is comprehensive
 - [ ] Success criteria are specific and measurable
 - [ ] Playbook is added to README.md
