@@ -17,7 +17,7 @@ Use this playbook immediately after cloning the template repository when you wan
 - Git repository for the new project
 - Template cloned or downloaded
 
-### Information You'll Need
+### Inputs
 Before starting, have the following information ready for the AI Agent:
 - **New project name** (e.g., "MyAwesomeApp")
 - **Package name** (e.g., "com.yourcompany.yourapp")
