@@ -64,38 +64,21 @@ ProjectTemplate2025/
 - **library-domain**: Business logic and contracts
 - **feature-example**: Todo/checklist feature demonstrating patterns
 
-## 🔧 Quick Start
+## 🚀 Getting Started
 
-### 1. Setup New Project with Amazon Q
+### Explore the Template
+**New to this template?** Start with the Quick Start playbook:
 ```
-# Clone template
-git clone <template-repo> YourProjectName
-cd YourProjectName
-
-# Open in Android Studio with Amazon Q plugin
+@playbooks/quick-start.md I want to quickly get started with this template
 ```
+This will guide you through the project structure, run the example, and show you how to use Amazon Q effectively.
 
-### 2. Use the Setup Playbook
-1. Open Amazon Q Chat in Android Studio
-2. Type: `@playbooks/setup-new-project.md I want to set up a new project based on this template`
-3. Amazon Q will ask guided questions to gather the required information
-4. Once you provide the information, Amazon Q will execute the setup automatically
-
-The setup playbook will automatically:
-- ✅ Replace package names: `com.methodsignature.projecttemplate2025` → `com.yourcompany.yourapp`
-- ✅ Update app name in `strings.xml`
-- ✅ Modify `rootProject.name` in `settings.gradle.kts`
-- ✅ Update class name references
-- ✅ Rename package directories to match new package structure
-- ✅ Configure Git repository
-- ✅ Customize UI theme
-- ✅ Configure module structure based on requirements
-
-### 3. Amazon Q Integration
-The template includes pre-configured Amazon Q rules:
-- Development standards in `.amazonq/rules/`
-- Architecture documentation in `docs/`
-- Use `@workspace` to load project context
+### Create a New Project
+**Ready to build something?** Use the Setup New Project playbook:
+```
+@playbooks/setup-new-project.md I want to set up a new project based on this template
+```
+This will automatically handle package renaming, configuration, and customization for your new project.
 
 ## 📚 Documentation
 
