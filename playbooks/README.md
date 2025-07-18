@@ -22,8 +22,8 @@ See [Playbook Philosophy](../docs/playbook-philosophy.md) for detailed benefits 
 | [Quick Start](quick-start.md) | Quick introduction and orientation to the template project | N/A |
 | [Setup New Project](setup-new-project.md) | Set up a new project based on this template | N/A |
 | [Create New Playbook](create-new-playbook.md) | Create a new structured playbook for development workflows | [Template](templates/playbook-template.md) |
-| [Create New Screen](create-new-screen.md) | Add a new screen to an existing navigation flow | [Template](templates/create-new-screen-prd.md) |
-| [Create New Flow](create-new-flow.md) | Create a new navigation flow in the app | [Template](templates/create-new-flow-prd.md) |
+| [Create New Screen](create-new-screen.md) | Add a new screen to an existing navigation flow | N/A |
+| [Create New Flow](create-new-flow.md) | Create a new navigation flow in the app | N/A |
 
 ## How to Use Playbooks
 
@@ -31,7 +31,8 @@ See [Playbook Philosophy](../docs/playbook-philosophy.md) for detailed benefits 
 1. Open Amazon Q Chat
 2. Reference the playbook: `@playbooks/[playbook-name].md [brief description of what you want to do]`
 3. Amazon Q will ask guided questions to gather the required information
-4. Once you provide the information, Amazon Q will execute the playbook steps
+4. Answer the questions thoroughly
+5. Amazon Q will execute the playbook steps
 
 ### Example Usage
 ```

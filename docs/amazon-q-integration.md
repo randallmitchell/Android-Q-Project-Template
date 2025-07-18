@@ -140,7 +140,7 @@ Use structured playbooks for common development tasks:
 ```
 @playbooks/create-new-screen.md
 
-[Your completed Playbook Requirements Document (PRD) here]
+[Answer Amazon Q's guided questions here]
 ```
 
 Playbooks provide:

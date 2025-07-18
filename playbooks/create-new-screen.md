@@ -9,7 +9,7 @@ Creates an empty Compose screen structure and integrates it into an existing nav
 - Navigation component is configured
 
 ## Requirements
-Use [Create New Screen Playbook Requirements Document (PRD) Template](templates/create-new-screen-prd.md) to gather:
+Amazon Q will gather the following information through guided questions:
 - Screen name and purpose
 - Target navigation flow
 - UI components and layout
@@ -46,5 +46,3 @@ Use [Create New Screen Playbook Requirements Document (PRD) Template](templates/
 - [ ] No compilation errors
 - [ ] Code follows project naming conventions
 
-## Template
-[Create New Screen Playbook Requirements Document (PRD) Template](templates/create-new-screen-prd.md)

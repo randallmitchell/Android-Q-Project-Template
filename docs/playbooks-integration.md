@@ -9,70 +9,53 @@ This document explains how to integrate the Playbook system with Amazon Q for au
 playbooks/
 ├── README.md                    # Main playbook documentation
 ├── [playbook-name].md          # Individual playbook definitions
-├── templates/                  # PRD templates for each playbook
-│   └── [playbook-name]-prd.md
-└── examples/                   # Example PRDs showing proper usage
+├── templates/                  # Playbook templates
+│   └── playbook-template.md
+└── examples/                   # Example usage
     └── [playbook-name]-example.md
 ```
 
 ## Amazon Q Integration
 
 ### Using Playbooks in Chat
-1. **Reference the playbook**: `@playbooks/[playbook-name].md`
-2. **Provide your PRD**: Include completed requirements document
+1. **Reference the playbook**: `@playbooks/[playbook-name].md [brief description]`
+2. **Answer guided questions**: Amazon Q will ask for required information
 3. **Amazon Q executes**: Follows playbook steps automatically
 
 ### Example Chat Interaction
 ```
-@playbooks/create-new-screen.md
+@playbooks/create-new-screen.md I want to add a new settings screen
 
-Here is my completed PRD:
-
-# Playbook Requirements Document (PRD)
-## Create New Screen
-
-### Project Context
-- **Current Navigation Flow**: Todo feature flow
-- **Target Feature Module**: feature-example
-- **Integration Point**: Navigate from TodoScreen when item is clicked
-
-[... rest of completed PRD ...]
+# Amazon Q will then ask guided questions like:
+# - What should the screen be called?
+# - Which navigation flow should it be added to?
+# - What placeholder content should it display?
+# - How should users navigate to this screen?
 ```
 
 ## Workflow Integration
 
 ### 1. Planning Phase
 - Choose appropriate playbook for your task
-- Use playbook template to gather requirements
-- Review example Playbook Requirements Documents (PRDs) for guidance
+- Have a general idea of what you want to accomplish
 
-### 2. Requirements Gathering
-- Fill out Playbook Requirements Document (PRD) template completely
-- Validate all required fields are completed
-- Review acceptance criteria
-
-### 3. Execution Phase
+### 2. Execution Phase
 - Open Amazon Q Chat
-- Reference playbook and provide Playbook Requirements Document (PRD)
+- Reference playbook with brief description
+- Answer Amazon Q's guided questions
 - Amazon Q follows playbook steps
 - Review generated code and structure
 
-### 4. Validation Phase
-- Check acceptance criteria from PRD
+### 3. Validation Phase
+- Check acceptance criteria
 - Run tests and verify functionality
 - Update documentation if needed
 
 ## Best Practices
 
-### PRD Creation
-- Be specific and detailed in requirements
-- Include all necessary context
-- Define clear acceptance criteria
-- Reference existing project patterns
-
 ### Amazon Q Usage
-- Always reference the specific playbook
-- Provide complete Playbook Requirements Document (PRD) in single message
+- Always reference the specific playbook with a brief description
+- Answer guided questions thoroughly and specifically
 - Ask for clarification if steps are unclear
 - Validate results against acceptance criteria
 
@@ -96,10 +79,9 @@ Here is my completed PRD:
 
 ### Adding New Playbooks
 1. Create playbook definition in `/playbooks/`
-2. Create Playbook Requirements Document (PRD) template in `/playbooks/templates/`
-3. Add example PRD in `/playbooks/examples/`
-4. Update main README with playbook entry
-5. Test with Amazon Q integration
+2. Add example usage in `/playbooks/examples/`
+3. Update main README with playbook entry
+4. Test with Amazon Q integration
 
 **Note**: Amazon Q can help generate new playbooks by referencing existing playbook patterns:
 ```
@@ -110,7 +92,6 @@ Here is my completed PRD:
 Each playbook should include:
 - **Overview**: Clear purpose and scope
 - **Prerequisites**: What must exist first
-- **Requirements**: Link to PRD template
+- **Requirements**: Information gathered through guided questions
 - **Steps**: Detailed implementation process
 - **Validation**: Success criteria
-- **Template**: Link to Playbook Requirements Document (PRD) template

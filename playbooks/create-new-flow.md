@@ -9,7 +9,7 @@ Creates an empty navigation flow structure with feature module scaffolding and b
 - Navigation component is configured
 
 ## Requirements
-Use [Create New Flow Playbook Requirements Document (PRD) Template](templates/create-new-flow-prd.md) to gather:
+Amazon Q will gather the following information through guided questions:
 - Flow name and purpose
 - Feature module structure
 - Entry and exit points
@@ -52,5 +52,3 @@ Use [Create New Flow Playbook Requirements Document (PRD) Template](templates/cr
 - [ ] Module structure follows project conventions
 - [ ] No compilation errors
 
-## Template
-[Create New Flow Playbook Requirements Document (PRD) Template](templates/create-new-flow-prd.md)

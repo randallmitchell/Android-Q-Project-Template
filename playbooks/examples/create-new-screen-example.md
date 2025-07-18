@@ -1,46 +1,37 @@
-# Example Playbook Requirements Document (PRD): Create New Screen
+# Example: Create New Screen Playbook Usage
 ## Todo Detail Screen
 
-### Project Context
-- **Current Navigation Flow**: Todo feature flow
-- **Target Feature Module**: feature-example
-- **Integration Point**: Navigate from TodoScreen when item is clicked
+### Chat Interaction Example
 
-### Screen Requirements
-- **Screen Name**: TodoDetailScreen
-- **Screen Purpose**: Will display and edit details of a specific todo item (future development)
-- **Placeholder Content**: "Todo Detail - Coming Soon" with todo ID display
+**Developer:**
+```
+@playbooks/create-new-screen.md I want to add a todo detail screen
+```
 
-### UI Specifications
-- **Basic Layout**: Centered content with TopAppBar
-- **Placeholder UI**: Title "Todo Detail", subtitle "Coming Soon", and display of todo ID parameter
-- **Navigation Elements**: Back button in TopAppBar
+**Amazon Q Response:**
+```
+I'll help you create a new screen. Let me gather the required information:
 
-### Data Requirements
-- **Initial State**: Display "Loading..." then show placeholder content
-- **Navigation Data**: todoId parameter from navigation arguments
-- **Future Data Needs**: Will need TodoItem from Room database
+1. What should the screen be called?
+2. Which navigation flow should it be added to?
+3. What navigation arguments does it need?
+4. What placeholder content should it display?
+5. How should users navigate to this screen?
+```
 
-### Navigation Specifications
-- **Navigation Arguments**: todoId: String
-- **Entry Points**: TodoScreen (when todo item is clicked)
-- **Exit Points**: Back to TodoScreen, Navigate to EditTodoScreen
-- **Deep Link Support**: Yes - /todo/{todoId}
+**Developer Answers:**
+```
+1. TodoDetailScreen
+2. Todo feature flow (feature-example module)
+3. todoId: String parameter
+4. "Todo Detail - Coming Soon" with the todo ID displayed
+5. From TodoScreen when a todo item is clicked
+```
 
-### Business Logic
-- **Future Use Cases**: GetTodoByIdUseCase, UpdateTodoUseCase, DeleteTodoUseCase
-- **Current Logic**: Display todoId parameter and placeholder message
-
-### Technical Constraints
-- **Build Requirements**: Must compile and integrate with existing todo feature
-- **Navigation Requirements**: Must work with existing TodoScreen navigation
-- **Future Considerations**: Will need Room database access and proper error handling
-
-### Acceptance Criteria
-- [ ] Empty screen displays "Todo Detail - Coming Soon" message
-- [ ] Screen shows the todoId parameter passed from TodoScreen
-- [ ] Navigation from TodoScreen works when item is clicked
-- [ ] Back navigation returns to TodoScreen
-- [ ] ViewModel is set up with Hilt injection
-- [ ] Screen follows project naming conventions
-- [ ] Module builds without errors
+**Result:**
+Amazon Q creates:
+- TodoDetailScreen composable with placeholder UI
+- TodoDetailViewModel with basic state
+- Navigation route with todoId parameter
+- Integration with existing TodoScreen navigation
+- Proper Hilt setup and project structure compliance
