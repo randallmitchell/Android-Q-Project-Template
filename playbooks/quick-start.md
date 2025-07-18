@@ -27,8 +27,15 @@ Before starting, have the following information ready for the AI Agent:
 
 ## For AI Agent
 
-### Role
-Mobile Developer - Project orientation and initial setup
+### Role(s)
+**REQUIRED**: See [Mobile Developer](roles/mobile-developer.md)
+
+**Primary Role**: Mobile Developer
+- Project orientation and initial setup with comprehensive project context
+- Access to build system, project structure, and example implementations
+- Handles project building, running examples, and demonstrating architecture patterns
+
+**Role Selection Reasoning**: This playbook requires hands-on interaction with the project including building, running, and explaining code architecture - matching the Mobile Developer role's comprehensive technical capabilities.
 
 ### Overview
 This playbook provides a quick introduction to the Android Project Template 2025, helping developers understand the structure, run the example, and get oriented with the key features and Amazon Q integration.

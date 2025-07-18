@@ -32,8 +32,15 @@ Before starting, have the following information ready for the AI Agent:
 
 ## For AI Agent
 
-### Role
-Mobile Developer - Full-stack project setup and configuration
+### Role(s)
+**REQUIRED**: See [Mobile Developer](roles/mobile-developer.md)
+
+**Primary Role**: Mobile Developer
+- Full-stack project setup and configuration with comprehensive project context
+- Access to build configuration, package structure, and project templates
+- Handles package renaming, module configuration, and project initialization
+
+**Role Selection Reasoning**: This playbook requires complete project knowledge including build systems, package management, module structure, and configuration files - matching the Mobile Developer role's comprehensive project context.
 
 ### Overview
 This playbook sets up a new Android project based on the ProjectTemplate2025 template. Handle package renaming, configuration updates, and initial project setup.

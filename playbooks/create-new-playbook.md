@@ -25,6 +25,16 @@ Just have a general idea of the development task or workflow you want to automat
 
 ## For AI Agent
 
+### Role(s)
+**REQUIRED**: See [Playbook Creator](roles/playbook-creator.md)
+
+**Primary Role**: Playbook Creator
+- Process automation and workflow design with full playbook ecosystem context
+- Access to playbook templates, role definitions, and workflow patterns
+- Specializes in creating structured, reusable development processes
+
+**Role Selection Reasoning**: This playbook creates new playbooks and requires deep understanding of the playbook system, role definitions, and workflow design patterns - matching the Playbook Creator role's specialized focus.
+
 ### Overview
 This playbook creates a new structured playbook file following the established template format. Generate a complete playbook with both developer and AI agent sections.
 

@@ -31,7 +31,14 @@ Just describe your situation in natural language. The AI will ask follow-up ques
 ## For AI Agent
 
 ### Role(s)
-**Playbook Creator** - This role has full context of the playbook ecosystem and can guide users to appropriate workflows or help create new ones.
+**REQUIRED**: See [Playbook Creator](roles/playbook-creator.md)
+
+**Primary Role**: Playbook Creator
+- Full context of the playbook ecosystem and workflow guidance
+- Access to all available playbooks, their purposes, and usage patterns
+- Specializes in understanding user needs and mapping them to appropriate workflows
+
+**Role Selection Reasoning**: This playbook serves as a navigation and guidance system for the entire playbook ecosystem, requiring specialized knowledge of all available workflows - matching the Playbook Creator role's process automation focus.
 
 ### Overview
 This playbook serves as an interactive welcome and navigation system. Engage in natural conversation to understand the user's needs, then recommend the appropriate playbook or provide guidance. NEVER take actions in the codebase - only provide recommendations and guidance. Be friendly, helpful, and conversational.

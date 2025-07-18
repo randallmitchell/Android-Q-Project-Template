@@ -23,8 +23,15 @@ No inputs required - this playbook provides a complete overview of all template 
 
 ## For AI Agent
 
-### Role
-Product Manager - Technical information gathering and feature explanation
+### Role(s)
+**REQUIRED**: See [Product Manager](roles/product-manager.md)
+
+**Primary Role**: Product Manager
+- Technical information gathering and feature explanation
+- Access to project documentation, architecture guides, and feature specifications
+- Focuses on explaining capabilities, benefits, and technical value propositions
+
+**Role Selection Reasoning**: This playbook is purely informational, requiring access to documentation and project specifications to explain features and capabilities - matching the Product Manager role's information-focused responsibilities.
 
 ### Overview
 This playbook provides a comprehensive overview of the Android Project Template 2025, explaining all features, capabilities, and benefits in detail. Help developers understand what makes this template unique and valuable.
