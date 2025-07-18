@@ -1,10 +1,8 @@
-# Android Project Template 2025
+# Agentic AI Android Template 2025
 
-A comprehensive Android project template featuring Clean Architecture, MVVM pattern, Jetpack Compose with Material Design 3, and seamless Amazon Q integration. Includes a todo/checklist example demonstrating best practices.
+An AI-first Android project template designed for agentic software development with Amazon Q. Features structured playbooks, role-based AI workflows, and production-ready architecture patterns optimized for human-AI collaboration.
 
 ## 🚀 Features
-
-A comprehensive Android project template featuring Clean Architecture, MVVM pattern, Jetpack Compose with Material Design 3, and seamless Amazon Q integration. Includes agentic AI development workflows, modern Android development stack, and production-ready architecture patterns.
 
 **Want to learn more?** Get a detailed overview:
 ```
@@ -88,67 +86,12 @@ This will automatically handle package renaming, configuration, and customizatio
 
 ## 🤖 Amazon Q Integration
 
-### Pre-configured Rules
-- Android development standards
-- Architecture compliance
-- Testing requirements
-- Code quality guidelines
+This template includes pre-configured Amazon Q rules and structured playbooks for AI-assisted development.
 
-### Getting Started with Playbooks
-**New to the project?** Start here:
+**Need help with a task?** Use the Welcome Assistant:
 ```
 @playbooks/welcome-assistant.md Hi, I need help with [describe your task]
 ```
-The Welcome Assistant will guide you to the right playbook based on your needs.
-
-### Playbook Examples
-```
-@playbooks/setup-new-project.md I want to set up a new project
-@playbooks/create-new-playbook.md I want to create a playbook for adding tests
-@playbooks/welcome-assistant.md I'm not sure which playbook to use
-```
-
-### Direct AI Examples
-```
-@workspace Create a new feature module for user authentication
-@docs/patterns Implement data loading with proper error handling
-@feature-example Add unit tests for the TodoViewModel
-```
-
-### Context Loading
-Amazon Q automatically loads:
-- Project architecture patterns
-- Established coding conventions
-- Library and feature module structure requirements
-- Testing strategies
-
-## 🧪 Testing Strategy
-
-- **Unit Tests**: ViewModels and Use Cases
-- **Integration Tests**: Service implementations
-- **UI Tests**: Critical user flows with Compose Testing
-- **Architecture Tests**: Module dependency validation
-
-## 📦 Dependencies
-
-### Core Dependencies
-- Kotlin 1.9.0
-- Compose BOM 2023.08.00
-- Hilt 2.48
-- Navigation Compose 2.6.0
-
-### Development Tools
-- Version Catalog for dependency management
-- Gradle Kotlin DSL
-- ProGuard configuration
-- Git ignore templates
-
-## 🔄 Development Workflow
-
-1. **Feature Development**: Create feature modules following template patterns
-2. **Code Review**: Use Amazon Q for architecture compliance checks
-3. **Testing**: Implement comprehensive test coverage
-4. **Documentation**: Update docs for new patterns or conventions
 
 ## 📋 Template Checklist
 
@@ -158,15 +101,6 @@ When using this template:
 - [ ] Set up CI/CD pipelines
 - [ ] Configure code quality tools
 - [ ] Add project-specific requirements
-
-## 🤝 Contributing
-
-When extending this template:
-1. Follow established architecture patterns
-2. Update documentation with examples
-3. Add Amazon Q rules for new conventions
-4. Include comprehensive tests
-5. Update template configuration
 
 ## 📄 License
 
