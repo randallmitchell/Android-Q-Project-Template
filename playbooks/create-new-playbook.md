@@ -35,11 +35,14 @@ This playbook creates a new structured playbook file following the established t
 - If a similar playbook exists, suggest using or enhancing it instead
 - Only proceed with new playbook creation if no suitable alternative exists
 
-**Identify the appropriate role(s):**
-Determine which role(s) best fit this playbook. Consider:
+**CRITICAL: Identify the appropriate role(s):**
+Role selection is the most important part of playbook creation as it determines what context and capabilities the AI will have access to.
+
+Determine which role(s) best fit this playbook:
 - **Specific over general**: Choose the most focused role that covers the needed context
 - **Multiple roles**: Complex playbooks may need different roles for different phases
 - **Context optimization**: Only load the documentation and code actually needed
+- **Always specify at least one role**: Never leave the Role(s) section empty
 
 Review existing roles in playbooks/roles/:
 - **Mobile Developer**: Full-stack feature implementation (broad context)
@@ -48,6 +51,12 @@ Review existing roles in playbooks/roles/:
 - **Playbook Creator**: Process automation and workflow design
 - **Product Manager**: Technical information gathering
 - **Custom role**: Create a new role if existing ones don't fit the specific context needs
+
+**Role Selection Questions:**
+- "What type of work will this playbook primarily involve?"
+- "What documentation and code context will the AI need access to?"
+- "Should this use a broad role like Mobile Developer or a focused role like UI Designer?"
+- "Will different steps need different roles, or can one role handle everything?"
 
 **Categorize the playbook type:**
 Determine which category this playbook falls into:
@@ -94,6 +103,7 @@ Determine which category this playbook falls into:
 - Define all required inputs with examples
 
 ### 3. Fill AI Agent Section
+- **CRITICAL**: Define the appropriate role(s) first - this determines what context and capabilities the AI will have
 - Write clear overview of what the AI should accomplish
 - List all information to gather from developer
 - Break down execution into numbered steps with specific actions
@@ -108,9 +118,10 @@ Determine which category this playbook falls into:
 - [ ] New playbook file created with correct filename
 - [ ] Developer section is complete and clear
 - [ ] AI Agent section has detailed execution steps
-- [ ] Role(s) have been identified and specified in the AI Agent section
-- [ ] Role selection is optimized for the specific task context
+- [ ] **CRITICAL**: Role(s) section is filled out with appropriate role selection
+- [ ] Role selection is optimized for the specific task context (specific over general)
 - [ ] If multiple roles are used, they are clearly mapped to execution phases
+- [ ] Role selection reasoning is documented in the playbook
 - [ ] Validation checklist is comprehensive
 - [ ] Success criteria are specific and measurable
 - [ ] Playbook is added to README.md
