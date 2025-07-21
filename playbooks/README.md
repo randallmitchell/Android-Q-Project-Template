@@ -30,15 +30,15 @@ See [Playbook Philosophy](../docs/playbook-philosophy.md) for detailed benefits 
 
 ### Execute a Playbook
 1. Open Amazon Q Chat
-2. Reference the playbook: `@playbooks/[playbook-name].md [brief description of what you want to do]`
+2. Use plain English: `Please run the [playbook name] playbook.`
 3. Amazon Q will ask guided questions to gather the required information
 4. Answer the questions thoroughly
 5. Amazon Q will execute the playbook steps
 
 ### Example Usage
 ```
-@playbooks/create-new-screen.md I want to add a new settings screen
-@playbooks/setup-new-project.md I want to set up a new project based on this template
+Please run the create new screen playbook.
+Please run the setup new project playbook.
 ```
 
 ## Playbook Structure

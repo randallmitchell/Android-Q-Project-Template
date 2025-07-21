@@ -12,7 +12,7 @@ Use this playbook when you:
 ### How to Run This Playbook
 1. Open the project in Android Studio
 2. Open Amazon Q Chat panel (click the Amazon Q icon in the toolbar)
-3. Type: `@playbooks/welcome-assistant.md Hi, I need help with [describe your task or situation]`
+3. Type: `Please run the welcome assistant playbook.`
 4. Amazon Q will have a conversation with you to understand your needs
 5. Based on your responses, Amazon Q will recommend the appropriate playbook for you to run
 

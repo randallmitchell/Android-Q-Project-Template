@@ -6,7 +6,7 @@ An AI-first Android project template designed for agentic software development w
 
 **Want to learn more?** Get a detailed overview:
 ```
-@playbooks/project-overview.md Tell me about this project's features and capabilities
+Please run the project overview playbook.
 ```
 
 ## 📁 Project Structure
@@ -59,14 +59,14 @@ This will explain all features, architecture patterns, and AI integration capabi
 ### Explore the Template
 **New to this template?** Start with the Quick Start playbook:
 ```
-@playbooks/quick-start.md I want to quickly get started with this template
+Please run the quick start playbook.
 ```
 This will guide you through the project structure, run the example, and show you how to use Amazon Q effectively.
 
 ### Create a New Project
 **Ready to build something?** Use the Setup New Project playbook:
 ```
-@playbooks/setup-new-project.md I want to set up a new project based on this template
+Please run the setup new project playbook.
 ```
 This will automatically handle package renaming, configuration, and customization for your new project.
 
@@ -90,7 +90,7 @@ This template includes pre-configured Amazon Q rules and structured playbooks fo
 
 **Need help with a task?** Use the Welcome Assistant:
 ```
-@playbooks/welcome-assistant.md Hi, I need help with [describe your task]
+Please run the welcome assistant playbook.
 ```
 
 ## 📋 Template Checklist

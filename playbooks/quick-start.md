@@ -8,7 +8,7 @@ Use this playbook when you want to quickly get started with the Android Project 
 ### How to Run This Playbook
 1. Open the project in Android Studio
 2. Open Amazon Q Chat panel (click the Amazon Q icon in the toolbar)
-3. Type: `@playbooks/quick-start.md I want to quickly get started with this template`
+3. Type: `Please run the quick start playbook.`
 4. Amazon Q will guide you through the essential setup steps
 5. Once complete, you'll have a working project ready for exploration
 

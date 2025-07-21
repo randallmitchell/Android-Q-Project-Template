@@ -8,7 +8,7 @@ Use this playbook when you want a comprehensive overview of the Android Project 
 ### How to Run This Playbook
 1. Open the project in Android Studio
 2. Open Amazon Q Chat panel (click the Amazon Q icon in the toolbar)
-3. Type: `@playbooks/project-overview.md Tell me about this project's features and capabilities`
+3. Type: `Please run the project overview playbook.`
 4. Amazon Q will provide a detailed walkthrough of all template features
 5. You can ask follow-up questions about specific areas of interest
 

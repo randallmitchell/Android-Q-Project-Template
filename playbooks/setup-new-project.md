@@ -8,7 +8,7 @@ Use this playbook immediately after cloning the template repository when you wan
 ### How to Run This Playbook
 1. Open the project in Android Studio
 2. Open Amazon Q Chat panel (click the Amazon Q icon in the toolbar)
-3. Type: `@playbooks/setup-new-project.md I want to set up a new project based on this template`
+3. Type: `Please run the setup new project playbook.`
 4. Amazon Q will ask you for the required information listed below
 5. Once you provide the information, Amazon Q will execute the setup automatically
 

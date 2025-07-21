@@ -8,7 +8,7 @@ Use this playbook when you want to add a new screen to an existing navigation fl
 ### How to Run This Playbook
 1. Open the project in Android Studio
 2. Open Amazon Q Chat panel (click the Amazon Q icon in the toolbar)
-3. Type: `@playbooks/create-new-screen.md I want to add a new screen`
+3. Type: `Please run the create new screen playbook.`
 4. Amazon Q will ask guided questions to gather requirements
 5. Once you provide the information, Amazon Q will execute the steps automatically
 

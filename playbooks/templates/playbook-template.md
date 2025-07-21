@@ -8,7 +8,7 @@
 ### How to Run This Playbook
 1. Open the project in Android Studio
 2. Open Amazon Q Chat panel (click the Amazon Q icon in the toolbar)
-3. Type: `@playbooks/[playbook-filename].md [brief description of what you want to do]`
+3. Type: `Please run the [playbook name] playbook.`
 4. Amazon Q will ask you for the required information listed below
 5. Once you provide the information, Amazon Q will execute the steps automatically
 

@@ -10,7 +10,7 @@ Use this playbook when you want to create a new structured playbook for a develo
 ### How to Run This Playbook
 1. Open the project in Android Studio
 2. Open Amazon Q Chat panel (click the Amazon Q icon in the toolbar)
-3. Type: `@playbooks/create-new-playbook.md I want to create a new playbook`
+3. Type: `Please run the create new playbook playbook.`
 4. Amazon Q will ask you for the required information listed below
 5. Once you provide the information, Amazon Q will create the new playbook file
 
