@@ -73,17 +73,28 @@ Ask the developer for the following information:
 - Explain the pre-configured rules in .amazonq/rules/
 - Show example AI-assisted development commands
 
-### 5. Next Steps Guidance
+### 5. Create Your First Playbook
+- Explain that creating playbooks is essential for efficient AI-assisted development
+- Show how to identify repetitive tasks that would benefit from playbooks
+- Emphasize that even one-off tasks benefit from playbooks because they organize communication between user and AI agent
+- Demonstrate the create new playbook process
+- Emphasize that playbooks make development faster and more consistent for both recurring and one-time tasks
+
+### 6. Next Steps Guidance
 - Point to relevant playbooks for specific tasks
 - Suggest documentation to read based on their goals
 - Recommend starting points for new feature development
 - Explain how to use the setup playbook for new projects
+- Encourage creating playbooks for both repetitive workflows and complex one-off tasks
+- Explain that playbooks improve communication clarity even for single-use tasks
 
 ### Validation Checklist
 - [ ] Project builds and runs successfully
 - [ ] Example feature is working correctly
 - [ ] Developer understands the project structure
 - [ ] Amazon Q integration is demonstrated
+- [ ] Playbook creation process is explained and demonstrated
+- [ ] Developer understands the importance of creating custom playbooks
 - [ ] Next steps are clearly explained
 - [ ] Developer questions are answered
 
@@ -92,4 +103,6 @@ Confirm with the developer that:
 1. They can build and run the project successfully
 2. They understand the overall architecture and patterns
 3. They know how to use Amazon Q effectively with this template
-4. They have clear next steps for their specific goals
+4. They understand that creating playbooks is essential for efficient development
+5. They can identify tasks that would benefit from custom playbooks
+6. They have clear next steps for their specific goals
